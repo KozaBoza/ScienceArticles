@@ -1,0 +1,12 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
+  "/api/articles/route": "app/api/articles/route.js",
+  "/api/reviewers/route": "app/api/reviewers/route.js",
+  "/editorial-board/page": "app/editorial-board/page.js",
+  "/latest/page": "app/latest/page.js",
+  "/page": "app/page.js",
+  "/review-process/page": "app/review-process/page.js",
+  "/reviewers/page": "app/reviewers/page.js",
+  "/reviews/page": "app/reviews/page.js"
+}

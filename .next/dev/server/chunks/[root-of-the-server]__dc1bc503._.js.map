@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///Users/natalatomala/czasopismo-naukowe/app/api/reviewers/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\nimport { PrismaClient } from \"@prisma/client\";\n\nconst prisma = new PrismaClient();\n\nexport async function GET() {\n  const reviewers = await (prisma as any).reviewer.findMany({ orderBy: { name: 'asc' } });\n  return NextResponse.json(reviewers);\n}\n\n// Opcjonalnie dodaj POST, aby móc ich dodawać z panelu admina"],"names":[],"mappings":";;;;AAAA;AACA;;;AAEA,MAAM,SAAS,IAAI,+NAAY;AAExB,eAAe;IACpB,MAAM,YAAY,MAAM,AAAC,OAAe,QAAQ,CAAC,QAAQ,CAAC;QAAE,SAAS;YAAE,MAAM;QAAM;IAAE;IACrF,OAAO,yKAAY,CAAC,IAAI,CAAC;AAC3B,EAEA,8DAA8D"}}]
+}

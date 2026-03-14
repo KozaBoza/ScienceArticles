@@ -1,0 +1,52 @@
+import NextAuth from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
+import { PrismaClient } from "@prisma/client";
+import bcrypt from "bcryptjs";
+
+const prisma = new PrismaClient();
+
+const handler = NextAuth({
+  providers: [
+    CredentialsProvider({
+      name: "Logowanie",
+      credentials: {
+        login: { label: "Login", type: "text", placeholder: "Wpisz login" },
+        password: { label: "Hasło", type: "password", placeholder: "Wpisz hasło" }
+      },
+      async authorize(credentials) {
+        // 1. Sprawdzamy, czy użytkownik wpisał cokolwiek
+        if (!credentials?.login || !credentials?.password) {
+          return null;
+        }
+
+        // 2. Szukamy admina w bazie po loginie
+        const user = await prisma.admin.findUnique({
+          where: { login: credentials.login }
+        });
+
+        if (!user) {
+          return null; // Nie ma takiego loginu
+        }
+
+        // 3. Porównujemy wpisane hasło z zaszyfrowanym w bazie
+        const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
+
+        if (!isPasswordValid) {
+          return null; // Złe hasło
+        }
+
+        // 4. Sukces! Logujemy użytkownika
+        return { id: user.id.toString(), name: user.login };
+      }
+    })
+  ],
+  session: {
+    strategy: "jwt", // Używamy tokenów JWT
+  },
+  pages: {
+    signIn: "/login", // Powiemy systemowi, że nasz własny formularz będzie pod tym adresem
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+});
+
+export { handler as GET, handler as POST };

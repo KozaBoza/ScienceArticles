@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #262CAF; /* Kobaltowy błękit z makiety */
+  --color-secondary: #9BA3E8; /* Jasny fiolet */
+  --color-muted: #F3F3F3; /* Szary dla boxów */
+  --color-bg: #FFFFFF; /* Czysta biel */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* PALETA PRZYJAZNA SENSORYCZNIE (Autism-Friendly) */
+.theme-sensory {
+  --color-primary: #5A7BB5; /* Łagodny, pastelowy niebieski (niski kontrast) */
+  --color-secondary: #B4C4D9; /* Bardzo delikatny, zgaszony fioletowo-szary */
+  --color-muted: #E8EBEF; /* Bardziej miękki szary */
+  --color-bg: #FCFCFC; /* Złamana biel (redukuje odblaski ekranu) */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  font-family: var(--font-inter), sans-serif;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Wymuszenie szeryfowego fontu dla odpowiednich klas */
+.font-serif {
+  font-family: var(--font-playfair), serif;
+}
+
+/* Magia detali: Zmiana koloru zaznaczania tekstu myszką */
+::selection {
+  background-color: #262CAF;
+  color: #ffffff;
+}
+::-moz-selection {
+  background-color: #262CAF;
+  color: #ffffff;
+}
+
+/* Stylizacja paska przewijania (Scrollbara) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9BA3E8; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #262CAF; 
+}
+
+/* Klasa narzędziowa do ukrywania scrollbara, zapisana w nowym standardzie v4 */
+@utility no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

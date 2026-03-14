@@ -1,0 +1,6 @@
+[00:00:00.715] Server  LOG     ✓ Ready in 540ms
+[00:00:08.304] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:17.995] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:02:50.323] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./czasopismo-naukowe/app/reviewers/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:02:50.413] Server  LOG     ✓ Compiled in 43ms
+[00:03:51.504] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior

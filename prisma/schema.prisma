@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+
+// Tabela Artykułu (Wymogi NF2, F5, F10)
+model Article {
+  id              Int      @id @default(autoincrement())
+  title           String
+  authors         String
+  pageRange       String
+  publicationDate DateTime
+  pdfPath         String
+  extraFilePath   String?
+  views           Int      @default(0)
+  categoryId      Int
+  category        Category @relation(fields: [categoryId], references: [id])
+  createdAt       DateTime @default(now())
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  code     String    @unique
+  articles Article[]
+}
+
+model Reviewer {
+  id          Int      @id @default(autoincrement())
+  name        String
+  affiliation String
+  field       String
+  createdAt   DateTime @default(now())
+}
+
+model Admin {
+  id       Int    @id @default(autoincrement())
+  login    String @unique
+  password String
+}
