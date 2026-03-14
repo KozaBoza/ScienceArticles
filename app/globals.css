@@ -1,18 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #262CAF; /* Kobaltowy błękit z makiety */
-  --color-secondary: #9BA3E8; /* Jasny fiolet */
-  --color-muted: #F3F3F3; /* Szary dla boxów */
-  --color-bg: #FFFFFF; /* Czysta biel */
+  --color-primary: #262CAF; 
+  --color-secondary: #9BA3E8; 
+  --color-muted: #F3F3F3; 
+  --color-bg: #FFFFFF; 
 }
 
-/* PALETA PRZYJAZNA SENSORYCZNIE (Autism-Friendly) */
 .theme-sensory {
-  --color-primary: #5A7BB5; /* Łagodny, pastelowy niebieski (niski kontrast) */
-  --color-secondary: #B4C4D9; /* Bardzo delikatny, zgaszony fioletowo-szary */
-  --color-muted: #E8EBEF; /* Bardziej miękki szary */
-  --color-bg: #FCFCFC; /* Złamana biel (redukuje odblaski ekranu) */
+  --color-primary: #5A7BB5;
+  --color-secondary: #B4C4D9; 
+  --color-muted: #E8EBEF; 
+  --color-bg: #FCFCFC; 
 }
 
 html {
@@ -24,12 +23,10 @@ html {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* Wymuszenie szeryfowego fontu dla odpowiednich klas */
 .font-serif {
   font-family: var(--font-playfair), serif;
 }
 
-/* Magia detali: Zmiana koloru zaznaczania tekstu myszką */
 ::selection {
   background-color: #262CAF;
   color: #ffffff;
@@ -39,7 +36,6 @@ html {
   color: #ffffff;
 }
 
-/* Stylizacja paska przewijania (Scrollbara) */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -57,7 +53,7 @@ html {
   background-color: #262CAF; 
 }
 
-/* Klasa narzędziowa do ukrywania scrollbara, zapisana w nowym standardzie v4 */
+/* klasa narzędziowa do ukrywania scrollbara */
 @utility no-scrollbar {
   &::-webkit-scrollbar {
     display: none;

@@ -19,27 +19,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         
         <Navigation />
 
-        {/* DYNAMICZNA TREŚĆ PODSTRON */}
         <main className="flex-grow w-full flex flex-col items-center pb-20">
           {children}
         </main>
 
-        {/* GLOBALNY FOOTER Z MIEJSCEM NA ILUSTRACJĘ */}
+        {/* GLOBLNY FOOTER */}
         <footer className="w-full relative flex flex-col mt-32 text-[var(--color-bg)] bg-[var(--color-primary)] transition-colors duration-500">
           
-          {/* DIV NA ILUSTRACJĘ (Podmień backgroundImage na swoją wyciętą z Figmy grafikę) */}
           <div 
             className="absolute top-0 left-0 w-full transform -translate-y-[99%] h-[400px] bg-bottom bg-no-repeat bg-contain pointer-events-none"
             style={{ backgroundImage: "url('/twoja-ilustracja-z-figmy.png')" }}
           >
-             {/* Awaryjne, wektorowe wzniesienia z "ziemią", jeśli obrazka jeszcze nie ma */}
              <svg viewBox="0 0 1000 100" preserveAspectRatio="none" className="absolute bottom-0 w-full h-24 fill-current text-[var(--color-primary)] transition-colors duration-500">
                <path d="M0,100 L0,40 L30,45 L60,30 L90,55 L130,20 L180,60 L230,35 L280,70 L340,25 L400,65 L460,40 L520,80 L580,30 L650,75 L720,45 L800,85 L880,50 L950,90 L1000,60 L1000,100 Z" />
              </svg>
           </div>
 
           <div className="container mx-auto max-w-6xl px-8 py-16 flex flex-col gap-24 relative z-10">
-            {/* LOGO W STOPCE */}
             <div>
               <h2 className="font-serif text-4xl md:text-5xl leading-[0.85] mix-blend-screen opacity-90">
                 SCIENTIZED<br/>
@@ -48,7 +44,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </h2>
             </div>
 
-            {/* NEWSLETTER I LINKI */}
             <div className="flex flex-col md:flex-row justify-between items-end gap-12">
               
               <div className="flex flex-col gap-12 w-full md:w-1/2">
@@ -68,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <div className="text-[10px] tracking-wider opacity-70 flex flex-col gap-1 mt-4">
                   <span className="font-serif italic text-lg opacity-100">Scientized Science Search</span>
                   <span>© All rights reserved {new Date().getFullYear()}</span>
-                  <span>ISSN: 1234-5678</span> {/*  Numer włączony do stopki zgodnie z dokumentem */}
+                  <span>ISSN: 1234-5678</span> {/*  nr włączony do stopki zgodnie z dokumentem */}
                 </div>
               </div>
 
