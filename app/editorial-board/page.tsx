@@ -2,140 +2,84 @@
 
 import React, { useState, useEffect } from 'react';
 
-// Przykładowa baza danych członków redakcji
-const EDITORS = [
-  {
-    id: 1,
-    name: "Dr. Eleanor Vance",
-    role: "Editor-in-Chief",
-    education: "Ph.D. in Cognitive Psychology, Oxford University",
-    specialization: "Neuroplasticity & Behavioral Science",
-    image: "" // Opcjonalnie: "/images/eleanor.jpg"
-  },
-  {
-    id: 2,
-    name: "Prof. Julian Asher",
-    role: "Managing Editor",
-    education: "Ph.D. in Computer Science, MIT",
-    specialization: "Artificial Intelligence & Machine Learning",
-    image: ""
-  },
-  {
-    id: 3,
-    name: "Dr. Sarah Lin",
-    role: "Associate Editor",
-    education: "Ph.D. in Mathematics, Stanford University",
-    specialization: "Cryptography & Number Theory",
-    image: ""
-  },
-  {
-    id: 4,
-    name: "Dr. Marcus Thorne",
-    role: "Review Coordinator",
-    education: "Ph.D. in Physics, Caltech",
-    specialization: "Quantum Mechanics & Thermodynamics",
-    image: ""
-  }
-];
+// 1. Definicja typu (interface)
+interface Editor {
+  id: number;
+  name: string;
+  affiliation: string;
+  role: string;
+}
 
+// 2. KLUCZOWE: export default function ...
 export default function EditorialBoardPage() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [editors, setEditors] = useState<Editor[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  // Funkcje do zmiany osoby (z zabezpieczeniem przed spamowaniem kliknięć)
-  const nextProfile = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prev) => (prev + 1) % EDITORS.length);
-  };
-
-  const prevProfile = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prev) => (prev - 1 + EDITORS.length) % EDITORS.length);
-  };
-
-  // Resetujemy blokadę animacji po krótkim czasie
   useEffect(() => {
-    if (isAnimating) {
-      const timer = setTimeout(() => setIsAnimating(false), 400); // 400ms na animację
-      return () => clearTimeout(timer);
-    }
-  }, [isAnimating]);
-
-  // Obliczanie indeksów dla lewego i prawego koła
-  const prevIndex = (currentIndex - 1 + EDITORS.length) % EDITORS.length;
-  const nextIndex = (currentIndex + 1) % EDITORS.length;
-
-  const currentEditor = EDITORS[currentIndex];
+    const fetchEditors = async () => {
+      try {
+        const res = await fetch("/api/editors");
+        if (!res.ok) throw new Error("Błąd pobierania");
+        const data = await res.json();
+        setEditors(data);
+      } catch (error) {
+        console.error("Error fetching editors:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchEditors();
+  }, []);
 
   return (
-    <div className="w-full max-w-5xl flex flex-col items-center pt-16 px-4">
-      <h1 className="font-serif text-[4rem] md:text-[5rem] mb-20 uppercase tracking-tight text-center leading-none">
+    <div className="w-full max-w-5xl flex flex-col items-center pt-16 px-8 bg-[var(--color-bg)] min-h-screen mx-auto">
+      {/* NAGŁÓWEK */}
+      <h1 className="font-serif text-[3.5rem] md:text-[5rem] mb-20 uppercase text-center leading-none tracking-tight text-[var(--color-primary)]">
         Editorial<br/>Board
       </h1>
-      
-      {/* SEKCJA KARUZELI (Kółka ze zdjęciami) */}
-      <div className="w-full flex items-center justify-center gap-8 md:gap-16 mb-16 relative h-64">
-        
-        {/* LEWE KÓŁKO (Poprzednia osoba) */}
-        <div 
-          onClick={prevProfile}
-          className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-[var(--color-secondary)] transition-all duration-500 cursor-pointer hover:scale-105 hover:opacity-80 flex-shrink-0 bg-cover bg-center overflow-hidden border-2 border-transparent"
-          style={{ backgroundImage: `url(${EDITORS[prevIndex].image})` }}
-        >
-          {/* Fallback jeśli nie ma zdjęcia */}
-          {!EDITORS[prevIndex].image && <div className="w-full h-full bg-[var(--color-secondary)] opacity-50"></div>}
-        </div>
-        
-        {/* ŚRODKOWE KÓŁKO (Główna osoba) */}
-        <div 
-          className={`w-48 h-48 md:w-64 md:h-64 rounded-full bg-[var(--color-primary)] transition-all duration-500 flex-shrink-0 shadow-lg bg-cover bg-center overflow-hidden border-4 border-[var(--color-bg)] z-10 ${isAnimating ? 'scale-95 opacity-80' : 'scale-100 opacity-100'}`}
-          style={{ backgroundImage: `url(${currentEditor.image})` }}
-        >
-          {!currentEditor.image && <div className="w-full h-full bg-[var(--color-primary)]"></div>}
-        </div>
 
-        {/* PRAWE KÓŁKO (Następna osoba) */}
-        <div 
-          onClick={nextProfile}
-          className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-[var(--color-secondary)] transition-all duration-500 cursor-pointer hover:scale-105 hover:opacity-80 flex-shrink-0 bg-cover bg-center overflow-hidden border-2 border-transparent"
-          style={{ backgroundImage: `url(${EDITORS[nextIndex].image})` }}
-        >
-          {!EDITORS[nextIndex].image && <div className="w-full h-full bg-[var(--color-secondary)] opacity-50"></div>}
+      {loading ? (
+        <div className="opacity-50 text-[10px] tracking-widest uppercase animate-pulse">
+          Loading board from database...
         </div>
-      </div>
-
-      {/* SEKCJA INFORMACYJNA (Płynne znikanie i pojawianie się tekstu) */}
-      <div className={`flex flex-col items-center text-center max-w-2xl transition-all duration-400 ${isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
-        
-        <h2 className="font-serif text-3xl md:text-4xl uppercase mb-2">
-          {currentEditor.name}
-        </h2>
-        
-        <div className="inline-block border border-[var(--color-primary)] px-6 py-2 mb-8 mt-2 text-[10px] tracking-[0.2em] uppercase font-semibold">
-          {currentEditor.role}
-        </div>
-
-        <div className="flex flex-col gap-4 w-full">
-          <div className="flex flex-col items-center border-b border-[var(--color-primary)]/20 pb-4">
-            <span className="text-[9px] tracking-[0.2em] uppercase opacity-60 mb-1">Education</span>
-            <span className="text-sm font-medium">{currentEditor.education}</span>
-          </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 w-full max-w-4xl border-t border-[var(--color-primary)]/20 pt-16">
+          {editors.map((editor) => (
+            <div key={editor.id} className="flex flex-col border-b border-[var(--color-primary)]/10 pb-6 group">
+              <div className="flex items-center gap-4 mb-2">
+                {/* Kropka dekoracyjna */}
+                <div className="w-2 h-2 rounded-full bg-[var(--color-secondary)] group-hover:bg-[var(--color-primary)] transition-colors duration-300"></div>
+                <h3 className="font-serif text-2xl group-hover:translate-x-1 transition-transform duration-300">
+                  {editor.name}
+                </h3>
+              </div>
+              
+              <div className="flex flex-col ml-6">
+                <span className="text-[10px] tracking-widest uppercase opacity-70 mb-1">
+                  {editor.affiliation}
+                </span>
+                <span className="text-[9px] tracking-[0.2em] uppercase font-semibold text-[var(--color-primary)] opacity-90">
+                  Role: {editor.role}
+                </span>
+              </div>
+            </div>
+          ))}
           
-          <div className="flex flex-col items-center">
-            <span className="text-[9px] tracking-[0.2em] uppercase opacity-60 mb-1">Specialization</span>
-            <span className="text-sm font-medium">{currentEditor.specialization}</span>
-          </div>
+          {editors.length === 0 && !loading && (
+            <p className="col-span-2 text-center opacity-40 text-xs uppercase tracking-widest">
+              No editors found in the database. Run your seed command.
+            </p>
+          )}
         </div>
+      )}
 
+      {/* STOPKA SEKACJI */}
+      <div className="mt-24 mb-16 inline-flex flex-col items-center text-center opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+        <span className="text-[9px] tracking-[0.2em] uppercase mb-2">Want to join the board?</span>
+        <div className="border-b border-[var(--color-primary)] pb-1 text-xs font-serif">
+          Inquire with the Editor-in-Chief
+        </div>
       </div>
-      
-      {/* Instrukcja nawigacji */}
-      <div className="mt-16 text-[9px] tracking-[0.2em] uppercase opacity-50">
-        Click side circles to navigate
-      </div>
-
     </div>
   );
 }

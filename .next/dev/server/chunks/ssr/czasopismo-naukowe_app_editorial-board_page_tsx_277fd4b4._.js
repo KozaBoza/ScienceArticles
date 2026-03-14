@@ -11,245 +11,157 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$nod
 "use client";
 ;
 ;
-// Przykładowa baza danych członków redakcji
-const EDITORS = [
-    {
-        id: 1,
-        name: "Dr. Eleanor Vance",
-        role: "Editor-in-Chief",
-        education: "Ph.D. in Cognitive Psychology, Oxford University",
-        specialization: "Neuroplasticity & Behavioral Science",
-        image: "" // Opcjonalnie: "/images/eleanor.jpg"
-    },
-    {
-        id: 2,
-        name: "Prof. Julian Asher",
-        role: "Managing Editor",
-        education: "Ph.D. in Computer Science, MIT",
-        specialization: "Artificial Intelligence & Machine Learning",
-        image: ""
-    },
-    {
-        id: 3,
-        name: "Dr. Sarah Lin",
-        role: "Associate Editor",
-        education: "Ph.D. in Mathematics, Stanford University",
-        specialization: "Cryptography & Number Theory",
-        image: ""
-    },
-    {
-        id: 4,
-        name: "Dr. Marcus Thorne",
-        role: "Review Coordinator",
-        education: "Ph.D. in Physics, Caltech",
-        specialization: "Quantum Mechanics & Thermodynamics",
-        image: ""
-    }
-];
 function EditorialBoardPage() {
-    const [currentIndex, setCurrentIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
-    const [isAnimating, setIsAnimating] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    // Funkcje do zmiany osoby (z zabezpieczeniem przed spamowaniem kliknięć)
-    const nextProfile = ()=>{
-        if (isAnimating) return;
-        setIsAnimating(true);
-        setCurrentIndex((prev)=>(prev + 1) % EDITORS.length);
-    };
-    const prevProfile = ()=>{
-        if (isAnimating) return;
-        setIsAnimating(true);
-        setCurrentIndex((prev)=>(prev - 1 + EDITORS.length) % EDITORS.length);
-    };
-    // Resetujemy blokadę animacji po krótkim czasie
+    const [editors, setEditors] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (isAnimating) {
-            const timer = setTimeout(()=>setIsAnimating(false), 400); // 400ms na animację
-            return ()=>clearTimeout(timer);
-        }
-    }, [
-        isAnimating
-    ]);
-    // Obliczanie indeksów dla lewego i prawego koła
-    const prevIndex = (currentIndex - 1 + EDITORS.length) % EDITORS.length;
-    const nextIndex = (currentIndex + 1) % EDITORS.length;
-    const currentEditor = EDITORS[currentIndex];
+        const fetchEditors = async ()=>{
+            try {
+                const res = await fetch("/api/editors");
+                if (!res.ok) throw new Error("Błąd pobierania");
+                const data = await res.json();
+                setEditors(data);
+            } catch (error) {
+                console.error("Error fetching editors:", error);
+            } finally{
+                setLoading(false);
+            }
+        };
+        fetchEditors();
+    }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-full max-w-5xl flex flex-col items-center pt-16 px-4",
+        className: "w-full max-w-5xl flex flex-col items-center pt-16 px-8 bg-[var(--color-bg)] min-h-screen mx-auto",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                className: "font-serif text-[4rem] md:text-[5rem] mb-20 uppercase tracking-tight text-center leading-none",
+                className: "font-serif text-[3.5rem] md:text-[5rem] mb-20 uppercase text-center leading-none tracking-tight text-[var(--color-primary)]",
                 children: [
                     "Editorial",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                         fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                        lineNumber: 75,
+                        lineNumber: 38,
                         columnNumber: 18
                     }, this),
                     "Board"
                 ]
             }, void 0, true, {
                 fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                lineNumber: 74,
+                lineNumber: 37,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "w-full flex items-center justify-center gap-8 md:gap-16 mb-16 relative h-64",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        onClick: prevProfile,
-                        className: "w-24 h-24 md:w-32 md:h-32 rounded-full bg-[var(--color-secondary)] transition-all duration-500 cursor-pointer hover:scale-105 hover:opacity-80 flex-shrink-0 bg-cover bg-center overflow-hidden border-2 border-transparent",
-                        style: {
-                            backgroundImage: `url(${EDITORS[prevIndex].image})`
-                        },
-                        children: !EDITORS[prevIndex].image && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-full h-full bg-[var(--color-secondary)] opacity-50"
-                        }, void 0, false, {
-                            fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                            lineNumber: 88,
-                            columnNumber: 41
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                        lineNumber: 82,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: `w-48 h-48 md:w-64 md:h-64 rounded-full bg-[var(--color-primary)] transition-all duration-500 flex-shrink-0 shadow-lg bg-cover bg-center overflow-hidden border-4 border-[var(--color-bg)] z-10 ${isAnimating ? 'scale-95 opacity-80' : 'scale-100 opacity-100'}`,
-                        style: {
-                            backgroundImage: `url(${currentEditor.image})`
-                        },
-                        children: !currentEditor.image && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-full h-full bg-[var(--color-primary)]"
-                        }, void 0, false, {
-                            fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                            lineNumber: 96,
-                            columnNumber: 36
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                        lineNumber: 92,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        onClick: nextProfile,
-                        className: "w-24 h-24 md:w-32 md:h-32 rounded-full bg-[var(--color-secondary)] transition-all duration-500 cursor-pointer hover:scale-105 hover:opacity-80 flex-shrink-0 bg-cover bg-center overflow-hidden border-2 border-transparent",
-                        style: {
-                            backgroundImage: `url(${EDITORS[nextIndex].image})`
-                        },
-                        children: !EDITORS[nextIndex].image && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-full h-full bg-[var(--color-secondary)] opacity-50"
-                        }, void 0, false, {
-                            fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                            lineNumber: 105,
-                            columnNumber: 41
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                        lineNumber: 100,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                lineNumber: 79,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `flex flex-col items-center text-center max-w-2xl transition-all duration-400 ${isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`,
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "font-serif text-3xl md:text-4xl uppercase mb-2",
-                        children: currentEditor.name
-                    }, void 0, false, {
-                        fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                        lineNumber: 112,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "inline-block border border-[var(--color-primary)] px-6 py-2 mb-8 mt-2 text-[10px] tracking-[0.2em] uppercase font-semibold",
-                        children: currentEditor.role
-                    }, void 0, false, {
-                        fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                        lineNumber: 116,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-col gap-4 w-full",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex flex-col items-center border-b border-[var(--color-primary)]/20 pb-4",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-[9px] tracking-[0.2em] uppercase opacity-60 mb-1",
-                                        children: "Education"
-                                    }, void 0, false, {
-                                        fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                                        lineNumber: 122,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-sm font-medium",
-                                        children: currentEditor.education
-                                    }, void 0, false, {
-                                        fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                                        lineNumber: 123,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                                lineNumber: 121,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex flex-col items-center",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-[9px] tracking-[0.2em] uppercase opacity-60 mb-1",
-                                        children: "Specialization"
-                                    }, void 0, false, {
-                                        fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                                        lineNumber: 127,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-sm font-medium",
-                                        children: currentEditor.specialization
-                                    }, void 0, false, {
-                                        fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                                        lineNumber: 128,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                                lineNumber: 126,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                        lineNumber: 120,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                lineNumber: 110,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mt-16 text-[9px] tracking-[0.2em] uppercase opacity-50",
-                children: "Click side circles to navigate"
+            loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "opacity-50 text-[10px] tracking-widest uppercase animate-pulse",
+                children: "Loading board from database..."
             }, void 0, false, {
                 fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                lineNumber: 135,
+                lineNumber: 42,
+                columnNumber: 9
+            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 w-full max-w-4xl border-t border-[var(--color-primary)]/20 pt-16",
+                children: [
+                    editors.map((editor)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex flex-col border-b border-[var(--color-primary)]/10 pb-6 group",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center gap-4 mb-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "w-2 h-2 rounded-full bg-[var(--color-secondary)] group-hover:bg-[var(--color-primary)] transition-colors duration-300"
+                                        }, void 0, false, {
+                                            fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
+                                            lineNumber: 51,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            className: "font-serif text-2xl group-hover:translate-x-1 transition-transform duration-300",
+                                            children: editor.name
+                                        }, void 0, false, {
+                                            fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
+                                            lineNumber: 52,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
+                                    lineNumber: 49,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex flex-col ml-6",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-[10px] tracking-widest uppercase opacity-70 mb-1",
+                                            children: editor.affiliation
+                                        }, void 0, false, {
+                                            fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
+                                            lineNumber: 58,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-[9px] tracking-[0.2em] uppercase font-semibold text-[var(--color-primary)] opacity-90",
+                                            children: [
+                                                "Role: ",
+                                                editor.role
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
+                                            lineNumber: 61,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
+                                    lineNumber: 57,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, editor.id, true, {
+                            fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
+                            lineNumber: 48,
+                            columnNumber: 13
+                        }, this)),
+                    editors.length === 0 && !loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "col-span-2 text-center opacity-40 text-xs uppercase tracking-widest",
+                        children: "No editors found in the database. Run your seed command."
+                    }, void 0, false, {
+                        fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
+                        lineNumber: 69,
+                        columnNumber: 13
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
+                lineNumber: 46,
+                columnNumber: 9
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "mt-24 mb-16 inline-flex flex-col items-center text-center opacity-60 hover:opacity-100 transition-opacity cursor-pointer",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "text-[9px] tracking-[0.2em] uppercase mb-2",
+                        children: "Want to join the board?"
+                    }, void 0, false, {
+                        fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
+                        lineNumber: 78,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "border-b border-[var(--color-primary)] pb-1 text-xs font-serif",
+                        children: "Inquire with the Editor-in-Chief"
+                    }, void 0, false, {
+                        fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
+                        lineNumber: 79,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
+                lineNumber: 77,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-        lineNumber: 73,
+        lineNumber: 35,
         columnNumber: 5
     }, this);
 }

@@ -17,7 +17,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} font-sans min-h-screen flex flex-col overflow-x-hidden bg-[var(--color-bg)] text-[var(--color-primary)] transition-colors duration-500`}>
         
-        {/* NASZ KOMPONENT NAWIGACJI (Z WYSZUKIWARKĄ I MOTYWEM) */}
         <Navigation />
 
         {/* DYNAMICZNA TREŚĆ PODSTRON */}

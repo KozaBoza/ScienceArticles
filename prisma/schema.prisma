@@ -7,9 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-
-// Tabela Artykułu (Wymogi NF2, F5, F10)
 model Article {
   id              Int      @id @default(autoincrement())
   title           String
@@ -22,6 +19,7 @@ model Article {
   categoryId      Int
   category        Category @relation(fields: [categoryId], references: [id])
   createdAt       DateTime @default(now())
+  reviews Review[]
 }
 
 model Category {
@@ -33,14 +31,37 @@ model Category {
 
 model Reviewer {
   id          Int      @id @default(autoincrement())
-  name        String
+  name        String   @unique 
   affiliation String
   field       String
   createdAt   DateTime @default(now())
+  reviews Review[]
 }
 
 model Admin {
   id       Int    @id @default(autoincrement())
   login    String @unique
   password String
+}
+
+model Editor {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  affiliation String
+  role        String   
+  createdAt   DateTime @default(now())
+}
+
+model Review {
+  id          Int      @id @default(autoincrement())
+  content     String   
+  rating      Int      @default(5) // Ocena 1-5
+  status      String   @default("Accepted") 
+  createdAt   DateTime @default(now())
+
+  articleId   Int
+  article     Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  
+  reviewerId  Int
+  reviewer    Reviewer @relation(fields: [reviewerId], references: [id])
 }

@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 
-// Usuwamy statyczne LATEST_ARTICLES, będziemy je pobierać z bazy
-const FAQS = [
+const FAQS = [ 
   { q: "How do I submit my manuscript?", a: "You can submit your manuscript via the 'About -> Information for Authors' page. Ensure it is in PDF format and follows our strict double-blind review guidelines." },
   { q: "Are all published articles open access?", a: "Yes, we strongly believe in open science. All articles published in Scientized Science Search are entirely free to read, download, and cite." },
   { q: "How long does the peer review process take?", a: "Our rigorous peer review process typically takes between 4 to 6 weeks, depending on the availability of our specialized reviewers." },
@@ -21,87 +20,89 @@ const ScallopedButton = () => (
 );
 
 export default function Home() {
-  const [articles, setArticles] = useState<any[]>([]);
-  const [categories, setCategories] = useState<any[]>([]);
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
-// Wewnątrz komponentu Home
-const [yearFilter, setYearFilter] = useState<string | null>(null);
+  const [articles, setArticles] = useState<any[]>([]); // powinno mieć typ Article[], ale dla uproszczenia używamy any[]
+  const [categories, setCategories] = useState<any[]>([]); // powinno mieć typ Category[], ale dla uproszczenia używamy any[]
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null); // który FAQ jest otwarty
+  const [activeCategory, setActiveCategory] = useState<string | null>(null); // aktualnie wybrana kategoria do filtrowania
+  const [yearFilter, setYearFilter] = useState<string | null>(null); // filtr lat (np. "2024", "2025", "2026")
 
-const fetchData = async () => {
-  let url = "/api/articles?";
-  if (activeCategory) url += `category=${activeCategory}&`;
-  if (yearFilter) url += `year=${yearFilter}`;
+  const fetchData = useCallback(async () => {
+    let url = "/api/articles?"; // endpoint API do pobierania artykułów z opcjonalnymi parametrami filtrowania
+    if (activeCategory) url += `category=${encodeURIComponent(activeCategory)}&`; //  filtr kategorii, jeśli jest aktywny
+    if (yearFilter) url += `year=${yearFilter}`; //  filtr lat, jeśli jest aktywny
 
-  const res = await fetch(url);
-  const data = await res.json();
-  setArticles(data);
-};
+    try {
+      const res = await fetch(url); //  artykuły z API z uwzględnieniem filtrów
+      const data = await res.json(); //  dane artykułów
+      setArticles(data);
 
-useEffect(() => {
-  fetchData();
-}, [activeCategory, yearFilter]);
-  // POBIERANIE DANYCH Z BAZY (Integracja z Prisma)
+      if (categories.length === 0 && data.length > 0) { //  jeśli kategorie nie są jeszcze załadowane, wyciągamy je z danych artykułów
+        const catNames = Array.from(new Set(data.map((a: any) => a.category.name)));
+        setCategories(catNames); // unikalne nazwy kategorii
+      }
+    } catch (error) {
+      console.error("Failed to fetch articles:", error);
+    }
+  }, [activeCategory, yearFilter, categories.length]);
+
   useEffect(() => {
-    const fetchData = async () => {
-      // Pobieramy artykuły
-      const artRes = await fetch("/api/articles");
-      const artData = await artRes.json();
-      setArticles(artData);
-
-      // Pobieramy kategorie (dynamicznie, żeby kółka zgadzały się z bazą)
-      const catNames = Array.from(new Set(artData.map((a: any) => a.category.name)));
-      setCategories(catNames);
-    };
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const toggleFaq = (index: number) => {
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
+    setOpenFaqIndex(openFaqIndex === index ? null : index); //  kliknięty FAQ jest już otwarty, zamknij go, w przeciwnym razie otwórz
   };
 
   const toggleCategory = (catName: string) => {
-    setActiveCategory(prev => prev === catName ? null : catName);
+    setActiveCategory(prev => prev === catName ? null : catName); //  kliknięta kategoria jest już aktywna, wyłącz filtr, w przeciwnym razie ustaw ją jako aktywną
   };
 
-  const filteredArticles = activeCategory 
-    ? articles.filter(article => article.category.name === activeCategory)
-    : articles;
-
   return (
-    <div className="w-full flex flex-col items-center pb-0">
-      
-      {/* SEKCJA 1: HERO - Zachowujemy Twój genialny brutalizm */}
+    <div className="w-full flex flex-col items-center pb-0 bg-[var(--color-bg)] min-h-screen">
       <section className="relative w-full max-w-5xl h-[500px] flex justify-center mt-12">
         <div className="absolute inset-0 flex justify-center items-start gap-3 md:gap-6 z-0 mt-20 opacity-90 pointer-events-none">
-          <div className="w-24 h-80 bg-[var(--color-muted)] transform -rotate-3 transition-colors duration-500"></div>
-          <div className="w-20 h-72 bg-[var(--color-muted)] transform rotate-6 mt-6 transition-colors duration-500"></div>
-          <div className="w-10 h-72 bg-[var(--color-muted)] transform -rotate-12 mt-12 transition-colors duration-500"></div>
-          <div className="w-24 h-96 bg-[var(--color-muted)] transform rotate-3 -mt-4 transition-colors duration-500"></div>
-          <div className="w-24 h-80 bg-[var(--color-muted)] transform -rotate-6 mt-8 transition-colors duration-500"></div>
-          <div className="w-10 h-72 bg-[var(--color-muted)] transform rotate-2 mt-2 transition-colors duration-500"></div>
-          <div className="w-24 h-80 bg-[var(--color-muted)] transform -rotate-3 mt-12 transition-colors duration-500"></div>
-          <div className="w-20 h-72 bg-[var(--color-muted)] transform rotate-12 mt-4 transition-colors duration-500"></div>
+          <div className="w-24 h-80 bg-[var(--color-muted)] transform -rotate-3"></div>
+          <div className="w-20 h-72 bg-[var(--color-muted)] transform rotate-6 mt-6"></div>
+          <div className="w-10 h-72 bg-[var(--color-muted)] transform -rotate-12 mt-12"></div>
+          <div className="w-24 h-96 bg-[var(--color-muted)] transform rotate-3 -mt-4"></div>
+          <div className="w-24 h-80 bg-[var(--color-muted)] transform -rotate-6 mt-8"></div>
+          <div className="w-10 h-72 bg-[var(--color-muted)] transform rotate-2 mt-2"></div>
+          <div className="w-24 h-80 bg-[var(--color-muted)] transform -rotate-3 mt-12"></div>
+          <div className="w-20 h-72 bg-[var(--color-muted)] transform rotate-12 mt-4"></div>
         </div>
 
-        <h1 className="font-serif text-[4.5rem] md:text-[7rem] leading-[0.75] z-10 flex flex-col items-center mix-blend-multiply tracking-tight mt-10 text-[var(--color-primary)] transition-colors duration-500">
+        <h1 className="font-serif text-[4.5rem] md:text-[7rem] leading-[0.75] z-10 flex flex-col items-center mix-blend-multiply tracking-tight mt-10 text-[var(--color-primary)]">
           <span className="transform -translate-x-12">SCIENTIZED</span>
           <span className="transform translate-x-4">SCIENCE</span>
           <span className="transform translate-x-28">SEARCH</span>
         </h1>
       </section>
 
-      {/* SEKCJA 2: LATEST ARTICLES - Teraz zasilane z API */}
+      {/* FILTR LAT */}
+      <div className="flex gap-4 mb-8 z-10">
+        {["2024", "2025", "2026"].map((year) => (
+          <button 
+            key={year}
+            onClick={() => setYearFilter(yearFilter === year ? null : year)}
+            className={`text-[9px] tracking-[0.2em] uppercase px-4 py-1 border transition-all ${yearFilter === year ? 'bg-[var(--color-primary)] text-white' : 'border-[var(--color-primary)] opacity-50 hover:opacity-100'}`}
+          >
+            Year: {year}
+          </button>
+        ))}
+      </div>
+
+      {/*  LATEST ARTICLES */}
       <section className="w-full max-w-[900px] flex flex-col gap-12 px-6 mt-10 min-h-[400px]">
         <h2 className="text-[10px] tracking-[0.3em] uppercase opacity-60 text-center mb-4">
           {activeCategory ? `Filtered by: ${activeCategory}` : "Latest Articles"}
         </h2>
         
         <div className="flex flex-col gap-12">
-          {filteredArticles.length > 0 ? (
-            filteredArticles.map((article) => (
+          {articles.length > 0 ? (
+            articles.map((article) => (
               <div key={article.id} className="flex flex-col md:flex-row min-h-[160px] w-full gap-6 md:gap-8 group animate-in fade-in slide-in-from-bottom-4 duration-500">
                 
+                {/* lewy blok*/}
                 <div className="w-full md:w-[25%] bg-[var(--color-secondary)] transition-colors duration-500 flex flex-col items-center justify-center p-6 shadow-sm">
                    <span className="text-[10px] tracking-[0.2em] uppercase opacity-80 mb-2">Category</span>
                    <span className="text-[var(--color-bg)] font-serif text-2xl text-center leading-tight">
@@ -109,6 +110,7 @@ useEffect(() => {
                    </span>
                 </div>
                 
+                {/* prawy blok */}
                 <div className="w-full md:w-[75%] border border-[var(--color-primary)] flex flex-col justify-between p-8 transition-colors duration-500 relative bg-[var(--color-bg)] shadow-sm hover:shadow-md">
                   <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[var(--color-primary)]"></div>
                   
@@ -120,15 +122,18 @@ useEffect(() => {
                     <div className="flex flex-col gap-1 text-[9px] tracking-[0.15em] uppercase opacity-80 font-medium">
                       <span><strong className="opacity-100">Authors:</strong> {article.authors}</span>
                       <div className="flex gap-6 mt-2">
-                        {/* Formatujemy datę z bazy danych */}
                         <span><strong className="opacity-100">Date:</strong> {new Date(article.publicationDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
                         <span><strong className="opacity-100">Pages:</strong> {article.pageRange}</span>
                       </div>
                     </div>
+
+                    <div className="flex items-center gap-2 mt-2">
+                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-[8px] tracking-widest uppercase font-bold text-green-600">Double-Blind Peer Reviewed</span>
+                    </div>
                   </div>
 
                   <div className="flex justify-end mt-6">
-                    {/* KLUCZOWE: Link kieruje do naszego API download, które nabija statystyki! */}
                     <Link href={`/api/download/${article.pdfPath}`} target="_blank">
                       <ScallopedButton />
                     </Link>
@@ -137,21 +142,19 @@ useEffect(() => {
               </div>
             ))
           ) : (
-            <div className="text-center opacity-50 text-[10px] tracking-[0.2em] uppercase py-20">
-              No articles found.
+            <div className="text-center opacity-50 text-[10px] tracking-[0.2em] uppercase py-20 italic">
+              No articles found in this archive selection.
             </div>
           )}
         </div>
       </section>
 
-      {/* SEKCJA 3: KATEGORIE (Dynamiczne kółka) */}
       <section className="flex flex-col items-center mt-32 px-6">
         <h2 className="text-[10px] tracking-[0.3em] uppercase opacity-60 text-center mb-16">Filter by Category</h2>
         
         <div className="flex flex-wrap gap-12 justify-center items-center">
           {categories.map((catName, index) => {
             const isActive = activeCategory === catName;
-            
             return (
               <button 
                 key={index}
@@ -170,7 +173,6 @@ useEffect(() => {
         </div>
       </section>
 
-      {/* SEKCJA 4: FAQ (Zostaje bez zmian) */}
       <section className="w-full max-w-[600px] flex flex-col gap-4 mt-32 px-6 mb-20">
         <h2 className="text-[10px] tracking-[0.3em] uppercase opacity-60 text-center mb-8">Frequently Asked Questions</h2>
         {FAQS.map((faq, index) => (

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///Users/natalatomala/czasopismo-naukowe/app/api/reviews/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\nimport { PrismaClient } from \"@prisma/client\";\n\nconst prisma = new PrismaClient();\n\nexport async function GET() {\n  try {\n    const reviews = await (prisma as any).review.findMany({\n      include: {\n        article: { select: { title: true, pdfPath: true } },\n        reviewer: { select: { name: true } }\n      },\n      orderBy: { createdAt: 'desc' }\n    });\n    return NextResponse.json(reviews);\n  } catch (error) {\n    return NextResponse.json({ error: \"Błąd pobierania recenzji\" }, { status: 500 });\n  }\n}"],"names":[],"mappings":";;;;AAAA;AACA;;;AAEA,MAAM,SAAS,IAAI,+NAAY;AAExB,eAAe;IACpB,IAAI;QACF,MAAM,UAAU,MAAM,AAAC,OAAe,MAAM,CAAC,QAAQ,CAAC;YACpD,SAAS;gBACP,SAAS;oBAAE,QAAQ;wBAAE,OAAO;wBAAM,SAAS;oBAAK;gBAAE;gBAClD,UAAU;oBAAE,QAAQ;wBAAE,MAAM;oBAAK;gBAAE;YACrC;YACA,SAAS;gBAAE,WAAW;YAAO;QAC/B;QACA,OAAO,yKAAY,CAAC,IAAI,CAAC;IAC3B,EAAE,OAAO,OAAO;QACd,OAAO,yKAAY,CAAC,IAAI,CAAC;YAAE,OAAO;QAA2B,GAAG;YAAE,QAAQ;QAAI;IAChF;AACF"}}]
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///Users/natalatomala/czasopismo-naukowe/app/api/editors/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\nimport { PrismaClient } from \"@prisma/client\";\n\nconst prisma = new PrismaClient();\n\nexport async function GET() {\n  try {\n    const editors = await (prisma as any).editor.findMany({\n      orderBy: { id: 'asc' } // Kolejność według dodania\n    });\n    return NextResponse.json(editors);\n  } catch (error) {\n    return NextResponse.json({ error: \"Błąd pobierania redaktorów\" }, { status: 500 });\n  }\n}"],"names":[],"mappings":";;;;AAAA;AACA;;;AAEA,MAAM,SAAS,IAAI,+NAAY;AAExB,eAAe;IACpB,IAAI;QACF,MAAM,UAAU,MAAM,AAAC,OAAe,MAAM,CAAC,QAAQ,CAAC;YACpD,SAAS;gBAAE,IAAI;YAAM,EAAE,2BAA2B;QACpD;QACA,OAAO,yKAAY,CAAC,IAAI,CAAC;IAC3B,EAAE,OAAO,OAAO;QACd,OAAO,yKAAY,CAAC,IAAI,CAAC;YAAE,OAAO;QAA6B,GAAG;YAAE,QAAQ;QAAI;IAClF;AACF"}}]
+}

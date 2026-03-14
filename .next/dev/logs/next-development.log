@@ -4,3 +4,43 @@
 [00:02:50.323] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./czasopismo-naukowe/app/reviewers/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
 [00:02:50.413] Server  LOG     ✓ Compiled in 43ms
 [00:03:51.504] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:14:07.601] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:20:28.209] Server  LOG     ✓ Compiled in 19ms
+[00:20:28.382] Browser ERROR   uncaughtError: TypeError: editors.map is not a function
+[00:20:34.803] Browser ERROR   uncaughtError: TypeError: editors.map is not a function
+[00:21:26.961] Browser ERROR   uncaughtError: TypeError: editors.map is not a function
+[00:21:27.942] Browser ERROR   uncaughtError: TypeError: editors.map is not a function
+[00:22:13.800] Browser ERROR   uncaughtError: TypeError: editors.map is not a function
+[00:22:14.673] Browser ERROR   uncaughtError: TypeError: editors.map is not a function
+[00:23:45.539] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:23:46.078] Server  ERROR   ⨯ Error: The default export is not a React Component in "/editorial-board/page"
+[00:23:46.254] Server  ERROR   ⨯ Error: The default export is not a React Component in "/editorial-board/page"
+[00:23:46.463] Server  ERROR   ⨯ Error: The default export is not a React Component in "/editorial-board/page"
+[00:23:46.636] Server  ERROR   ⨯ Error: The default export is not a React Component in "/editorial-board/page"
+[00:23:46.637] Server  LOG     ✓ Compiled in 882ms
+[00:23:46.981] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/editorial-board/page"
+[00:24:03.489] Server  LOG     ✓ Compiled in 4ms
+[00:24:03.822] Server  ERROR   ⨯ Error: The default export is not a React Component in "/editorial-board/page"
+[00:24:03.988] Server  ERROR   ⨯ Error: The default export is not a React Component in "/editorial-board/page"
+[00:24:04.077] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/editorial-board/page"
+[00:24:49.898] Browser ERROR   Error fetching editors: {}
+[00:24:56.737] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:25:02.682] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:25:08.263] Browser ERROR   Error fetching editors: {}
+[00:25:08.264] Browser ERROR   Error fetching editors: {}
+[00:27:51.622] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
+[00:27:51.801] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
+[00:27:52.020] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
+[00:27:52.197] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
+[00:27:52.376] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/reviews/page"
+[00:31:21.723] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
+[00:31:21.902] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
+[00:31:21.980] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/reviews/page"
+[00:31:23.473] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
+[00:31:23.628] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
+[00:31:23.701] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/reviews/page"
+[00:32:33.632] Browser ERROR   Failed to fetch reviews {}
+[00:33:34.457] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:33:36.457] Browser ERROR   uncaughtError: TypeError: reviews.map is not a function
+[00:35:42.534] Browser ERROR   uncaughtError: TypeError: reviews.map is not a function
+[00:37:26.391] Browser ERROR   uncaughtError: TypeError: reviews.map is not a function
