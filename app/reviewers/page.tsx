@@ -23,7 +23,7 @@ export default function ReviewersPage() {
 
   return (
     <div className="w-full flex flex-col items-center py-16 px-8 bg-[var(--color-bg)] min-h-screen">
-      {/* NAGŁÓWEK - Twój design */}
+      {/* NAGŁÓWEK  */}
       <h1 className="font-serif text-[3.5rem] md:text-[5rem] mb-20 uppercase text-center leading-none tracking-tight text-[var(--color-primary)]">
         Our<br/>Reviewers
       </h1>
@@ -32,7 +32,7 @@ export default function ReviewersPage() {
         We are deeply grateful to our esteemed panel of anonymous peer reviewers. Their dedication, rigorous analysis, and constructive feedback are the cornerstones of the scientific integrity upheld by Scientized Science Search.
       </div>
 
-      {/* LISTA RECENZENTÓW (Grid) */}
+      {/* LISTA RECENZENTÓW  */}
       {loading ? (
         <div className="text-[10px] tracking-[0.3em] uppercase opacity-50">Loading database...</div>
       ) : (
@@ -60,7 +60,7 @@ export default function ReviewersPage() {
         </div>
       )}
 
-      {/* FOOTER STRONY */}
+      {/* FOOTER  */}
       <div className="mt-24 inline-flex flex-col items-center text-center opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
         <span className="text-[9px] tracking-[0.2em] uppercase mb-2">Interested in reviewing?</span>
         <div className="border-b border-[var(--color-primary)] pb-1 text-xs">Contact our editorial board</div>

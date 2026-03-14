@@ -6,12 +6,10 @@ export default function AboutPage() {
       </h1>
       
       <div className="flex flex-col md:flex-row gap-16 w-full items-start">
-        {/* Lewa Strona: Abstrakcyjny, geometryczny blok akcentujący */}
         <div className="w-full md:w-1/3 aspect-square bg-[var(--color-secondary)] transition-colors duration-500 rounded-sm relative">
           <div className="absolute top-4 left-4 w-full h-full border border-[var(--color-primary)] transition-colors duration-500 pointer-events-none"></div>
         </div>
 
-        {/* Prawa Strona: Treść opisująca inicjatywę i wytyczne */}
         <div className="w-full md:w-2/3 flex flex-col gap-10 text-justify">
           <section>
             <h2 className="text-2xl font-serif uppercase tracking-wider mb-4 border-b border-[var(--color-primary)]/30 pb-2">Our Initiative</h2>
@@ -34,14 +32,13 @@ export default function AboutPage() {
             </p>
           </section>
 
-          {/* NOWA SEKCJA: Informacje dla autorów */}
+          {/* NOWA SEKCJA*/}
           <section className="mt-8 bg-[var(--color-muted)] p-8 border border-[var(--color-primary)] transition-colors duration-500">
             <h2 className="text-2xl font-serif uppercase tracking-wider mb-4">Information for Authors</h2>
             <p className="opacity-80 leading-relaxed text-sm mb-8">
               We welcome original research contributions. Prior to submission, please ensure your manuscript adheres strictly to our formatting guidelines, including complete anonymization for the double-blind peer review process. Our comprehensive author guidelines provide detailed instructions on structuring your paper, citing sources, and preparing data visualizations.
             </p>
             
-            {/* Przycisk pobierania szablonu (Stylizowany na outline button) */}
             <a 
               href="/template.docx" 
               download 

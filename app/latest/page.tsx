@@ -4,7 +4,6 @@ import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { Search, Eye, Filter, ArrowDownWideNarrow } from 'lucide-react';
 
-// --- ROZBUDOWANA BAZA DANYCH (MOCKUP) ---
 const ARTICLES_DB = [
   {
     id: 1,
@@ -16,7 +15,7 @@ const ARTICLES_DB = [
     category: "Computer Science",
     description: "This paper explores the theoretical boundaries of quantum entanglement when applied to macroscopic physical systems, challenging traditional thermodynamic models.",
     views: 1240,
-    imageUrl: "", // Miejsce na zdjęcie (url)
+    imageUrl: "", //url na zdj
     pdfUrl: "/sample-article.pdf"
   },
   {
@@ -83,11 +82,9 @@ export default function ArticlesSearchPage() {
     );
   };
 
-  // INTELIGENTNE FILTROWANIE I SORTOWANIE (useMemo zapobiega zacinaniu się strony)
   const filteredArticles = useMemo(() => {
     let result = [...ARTICLES_DB];
 
-    // 1. Wyszukiwarka (Tytuł lub opis)
     if (searchQuery.trim() !== "") {
       const q = searchQuery.toLowerCase();
       result = result.filter(a => 
@@ -97,12 +94,9 @@ export default function ArticlesSearchPage() {
       );
     }
 
-    // 2. Kategorie
     if (selectedCategories.length > 0) {
       result = result.filter(a => selectedCategories.includes(a.category));
     }
-
-    // 3. Lata
     if (selectedYears.length > 0) {
       result = result.filter(a => selectedYears.includes(a.year));
     }
@@ -121,10 +115,7 @@ export default function ArticlesSearchPage() {
 
   return (
     <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-12 pt-12 px-8 pb-24">
-      
-      {/* ============================== */}
-      {/* LEWY PANEL (SIDEBAR Z FILTRAMI) */}
-      {/* ============================== */}
+
       <aside className="w-full md:w-1/4 flex flex-col gap-12 sticky top-12 h-fit">
         
         <div>
@@ -132,7 +123,6 @@ export default function ArticlesSearchPage() {
           <p className="text-[9px] tracking-[0.2em] uppercase opacity-60">Find research papers</p>
         </div>
 
-        {/* Wyszukiwarka tekstowa */}
         <div className="flex items-center border-b border-[var(--color-primary)] pb-2 relative group">
           <Search size={16} className="opacity-50 group-focus-within:opacity-100 transition-opacity absolute left-0" />
           <input 
@@ -144,7 +134,6 @@ export default function ArticlesSearchPage() {
           />
         </div>
 
-        {/* Filtry Kategorii */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase font-bold opacity-80 border-b border-[var(--color-primary)]/20 pb-2">
             <Filter size={12}/> Categories
@@ -161,7 +150,6 @@ export default function ArticlesSearchPage() {
           </div>
         </div>
 
-        {/* Filtry Lat */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase font-bold opacity-80 border-b border-[var(--color-primary)]/20 pb-2">
             <Filter size={12}/> Publication Year
@@ -180,14 +168,8 @@ export default function ArticlesSearchPage() {
         </div>
 
       </aside>
-
-      {/* ============================== */}
-      {/* PRAWY PANEL (LISTA ARTYKUŁÓW) */}
-      {/* ============================== */}
       <main className="w-full md:w-3/4 flex flex-col min-h-[500px]">
-        
-        {/* Pasek sortowania */}
-        <div className="flex justify-between items-center mb-8 border-b border-[var(--color-primary)] pb-4">
+                <div className="flex justify-between items-center mb-8 border-b border-[var(--color-primary)] pb-4">
           <span className="text-[10px] tracking-[0.2em] uppercase opacity-60 font-bold">
             Showing {filteredArticles.length} results
           </span>
@@ -201,18 +183,15 @@ export default function ArticlesSearchPage() {
           </button>
         </div>
 
-        {/* Lista wyników */}
         <div className="flex flex-col gap-12">
           {filteredArticles.length > 0 ? (
             filteredArticles.map((article) => (
               <div key={article.id} className="flex flex-col md:flex-row gap-8 items-center md:items-start group border-b border-[var(--color-primary)]/20 pb-8 last:border-0">
                 
-                {/* OBRAZEK (Okrągły, zgodny z życzeniem) */}
                 <div 
                   className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 rounded-full bg-[var(--color-secondary)] transition-all duration-500 group-hover:scale-105 shadow-sm bg-cover bg-center border-4 border-[var(--color-bg)] outline outline-1 outline-[var(--color-primary)]/20"
                   style={{ backgroundImage: `url(${article.imageUrl})` }}
                 >
-                  {/* Fallback jeśli nie ma obrazka - geometryczny wzór */}
                   {!article.imageUrl && (
                     <div className="w-full h-full rounded-full opacity-30 flex items-center justify-center flex-col">
                        <div className="w-1/2 h-px bg-[var(--color-primary)] transform rotate-45"></div>
@@ -221,7 +200,6 @@ export default function ArticlesSearchPage() {
                   )}
                 </div>
 
-                {/* TREŚĆ ARTYKUŁU (Tytuł, Opis, Statystyki) */}
                 <div className="flex flex-col flex-1 w-full justify-between h-full py-2">
                   <div className="flex flex-col gap-3">
                     <span className="text-[9px] tracking-[0.2em] uppercase font-bold text-[var(--color-primary)]/70">
@@ -241,7 +219,6 @@ export default function ArticlesSearchPage() {
                     </span>
                   </div>
 
-                  {/* Dolny pasek karty: Statystyki i Przycisk PDF */}
                   <div className="flex justify-between items-end mt-8">
                     
                     {/* STATYSTYKI */}
@@ -250,7 +227,7 @@ export default function ArticlesSearchPage() {
                       {article.views.toLocaleString()} Views
                     </div>
 
-                    {/* Przycisk PDF */}
+                    {/*  PDF */}
                     <Link href={article.pdfUrl} target="_blank" className="relative inline-flex items-center justify-center w-28 h-8 cursor-pointer text-[var(--color-primary)] transition-colors duration-500 hover:opacity-70">
                       <svg className="absolute inset-0 w-full h-full fill-transparent" preserveAspectRatio="none" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
                         <path d="M 5 0 L 95 0 A 5 5 0 0 0 100 5 L 100 25 A 5 5 0 0 0 95 30 L 5 30 A 5 5 0 0 0 0 25 L 0 5 A 5 5 0 0 0 5 0 Z" stroke="currentColor" strokeWidth="0.8" />

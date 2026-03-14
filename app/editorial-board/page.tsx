@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 
-// 1. Definicja typu (interface)
 interface Editor {
   id: number;
   name: string;
@@ -47,7 +46,6 @@ export default function EditorialBoardPage() {
           {editors.map((editor) => (
             <div key={editor.id} className="flex flex-col border-b border-[var(--color-primary)]/10 pb-6 group">
               <div className="flex items-center gap-4 mb-2">
-                {/* Kropka dekoracyjna */}
                 <div className="w-2 h-2 rounded-full bg-[var(--color-secondary)] group-hover:bg-[var(--color-primary)] transition-colors duration-300"></div>
                 <h3 className="font-serif text-2xl group-hover:translate-x-1 transition-transform duration-300">
                   {editor.name}
@@ -73,7 +71,7 @@ export default function EditorialBoardPage() {
         </div>
       )}
 
-      {/* STOPKA SEKACJI */}
+      {/* STOPKA  */}
       <div className="mt-24 mb-16 inline-flex flex-col items-center text-center opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
         <span className="text-[9px] tracking-[0.2em] uppercase mb-2">Want to join the board?</span>
         <div className="border-b border-[var(--color-primary)] pb-1 text-xs font-serif">

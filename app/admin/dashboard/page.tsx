@@ -5,7 +5,6 @@ import { useDropzone } from 'react-dropzone';
 import { UploadCloud, FileText, CheckCircle, AlertTriangle, Archive, LayoutDashboard, LogOut } from 'lucide-react';
 import { signOut } from 'next-auth/react';
 
-// Kategorie zdefiniowane w specyfikacji [cite: 34-35]
 const CATEGORIES = [
   { code: 'M', name: 'Matematyka' },
   { code: 'I', name: 'Informatyka' },
@@ -28,7 +27,6 @@ export default function AdminDashboard() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
 
-  // Obsługa przeciągania pliku PDF [cite: 32]
   const onDropPdf = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
     if (file && file.type === 'application/pdf') {
@@ -45,7 +43,6 @@ export default function AdminDashboard() {
     maxFiles: 1 
   });
 
-  // Obsługa opcjonalnego pliku dodatkowego [cite: 31-32]
   const onDropExtra = useCallback((acceptedFiles: File[]) => {
     setExtraFile(acceptedFiles[0]);
   }, []);
@@ -66,7 +63,6 @@ export default function AdminDashboard() {
     setErrors({});
     setSuccessMsg('');
     
-    // Walidacja danych przed wysłaniem [cite: 51]
     const newErrors: Record<string, string> = {};
     if (!formData.title.trim()) newErrors.title = 'Tytuł jest wymagany.';
     if (!formData.authors.trim()) newErrors.authors = 'Autorzy są wymagani.';
@@ -98,7 +94,6 @@ export default function AdminDashboard() {
       
       setSuccessMsg(`Sukces! Artykuł zapisany jako: ${result.fileName}`);
       
-      // Reset formularza po sukcesie [cite: 39]
       setFormData({ title: '', authors: '', pageRange: '', publicationDate: '', categoryCode: 'M' });
       setPdfFile(null);
       setExtraFile(null);
@@ -111,7 +106,6 @@ export default function AdminDashboard() {
 
   return (
     <div className="w-full max-w-5xl flex flex-col pt-12 px-8 pb-24 text-[var(--color-primary)]">
-      {/* Nagłówek Panelu [cite: 49] */}
       <div className="flex justify-between items-end mb-16 border-b border-[var(--color-primary)] pb-8 transition-colors duration-500">
         <div>
           <h1 className="font-serif text-[2.5rem] uppercase leading-none tracking-tighter">
@@ -129,7 +123,6 @@ export default function AdminDashboard() {
         </button>
       </div>
 
-      {/* Komunikaty sukcesu i błędów [cite: 51] */}
       {successMsg && (
         <div className="w-full bg-[var(--color-primary)] text-[var(--color-bg)] p-6 mb-10 flex items-center gap-4 animate-in fade-in slide-in-from-top-4 duration-500">
           <CheckCircle size={24} />
@@ -138,7 +131,7 @@ export default function AdminDashboard() {
       )}
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-12">
-        {/* Sekcja 1: Dane artykułu  */}
+        {/* dane  */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
           <div className="flex flex-col">
             <label className="text-[9px] tracking-[0.2em] uppercase font-bold opacity-50 mb-3">Tytuł Artykułu</label>

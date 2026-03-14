@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 
-// Typ danych dla recenzji
 interface Review {
   id: number;
   content: string;

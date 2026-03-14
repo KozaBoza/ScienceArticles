@@ -14,7 +14,6 @@ export default function LoginPage() {
     e.preventDefault();
     setError("");
 
-    // Funkcja z NextAuth, która wysyła dane do naszego API
     const res = await signIn("credentials", {
       login,
       password,
@@ -24,7 +23,7 @@ export default function LoginPage() {
     if (res?.error) {
       setError("Nieprawidłowy login lub hasło");
     } else {
-      router.push("/admin"); // Po udanym logowaniu kierujemy do panelu
+      router.push("/admin"); 
       router.refresh();
     }
   };

@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 
-// Baza danych kroków (9 kroków, aby idealnie pasowały do Twojej grafiki z 9 kołami)
 const PROCESS_STEPS = [
   { id: 1, title: "Submission", isLarge: true, description: "The author submits the manuscript. The editorial office performs an initial technical check to ensure formatting and anonymization strictly follow our guidelines." },
   { id: 2, title: "Screening", isLarge: false, description: "Editor-in-Chief reviews the abstract to determine if the paper aligns with the magazine's scope." },
@@ -34,7 +33,6 @@ export default function ReviewProcessPage() {
         Review<br/>Process
       </h1>
       
-      {/* OŚ CZASU - 1:1 z Twoim obrazkiem */}
       <div className="w-full flex items-center justify-between mb-24 px-4 h-24">
         {PROCESS_STEPS.map((step) => (
           <div 
@@ -42,13 +40,11 @@ export default function ReviewProcessPage() {
             onMouseEnter={() => handleMouseEnter(step)}
             className="flex flex-col items-center cursor-pointer group relative"
           >
-            {/* Kółko dopasowane do grafiki */}
             <div className={`rounded-full transition-all duration-300 flex-shrink-0
               ${step.isLarge ? 'w-16 h-16 md:w-20 md:h-20 bg-[var(--color-primary)]' : 'w-8 h-8 md:w-10 md:h-10 bg-[var(--color-secondary)]'}
               ${activeStep.id === step.id ? 'scale-110 shadow-lg ring-4 ring-[var(--color-primary)]/20' : 'group-hover:scale-110'}
             `}></div>
             
-            {/* Tytuł pod spodem (widoczny przy aktywnym lub na hover) */}
             <div className={`absolute top-full mt-6 text-[9px] tracking-[0.2em] uppercase whitespace-nowrap text-center font-semibold transition-all duration-300 ${activeStep.id === step.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 group-hover:opacity-60'}`}>
               {step.title}
             </div>
@@ -58,7 +54,6 @@ export default function ReviewProcessPage() {
 
       {/* BLOK ZE SZCZEGÓŁAMI */}
       <div className="w-full max-w-3xl border border-[var(--color-primary)] bg-[var(--color-muted)] p-12 relative min-h-[200px] transition-colors duration-500 flex flex-col justify-center">
-        {/* Ozdobne "wycięte" rogi */}
         <div className="absolute -top-1 -left-1 w-3 h-3 border-b border-r border-[var(--color-primary)] bg-[var(--color-bg)] transition-colors duration-500"></div>
         <div className="absolute -top-1 -right-1 w-3 h-3 border-b border-l border-[var(--color-primary)] bg-[var(--color-bg)] transition-colors duration-500"></div>
         <div className="absolute -bottom-1 -left-1 w-3 h-3 border-t border-r border-[var(--color-primary)] bg-[var(--color-bg)] transition-colors duration-500"></div>
