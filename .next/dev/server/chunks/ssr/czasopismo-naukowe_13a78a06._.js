@@ -18,7 +18,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$nod
 ;
 ;
 ;
-// --- ROZBUDOWANA BAZA DANYCH (MOCKUP) ---
 const ARTICLES_DB = [
     {
         id: 1,
@@ -103,21 +102,17 @@ function ArticlesSearchPage() {
                 year
             ]);
     };
-    // INTELIGENTNE FILTROWANIE I SORTOWANIE (useMemo zapobiega zacinaniu się strony)
     const filteredArticles = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
         let result = [
             ...ARTICLES_DB
         ];
-        // 1. Wyszukiwarka (Tytuł lub opis)
         if (searchQuery.trim() !== "") {
             const q = searchQuery.toLowerCase();
             result = result.filter((a)=>a.title.toLowerCase().includes(q) || a.description.toLowerCase().includes(q) || a.authors.toLowerCase().includes(q));
         }
-        // 2. Kategorie
         if (selectedCategories.length > 0) {
             result = result.filter((a)=>selectedCategories.includes(a.category));
         }
-        // 3. Lata
         if (selectedYears.length > 0) {
             result = result.filter((a)=>selectedYears.includes(a.year));
         }
@@ -150,14 +145,14 @@ function ArticlesSearchPage() {
                                     "Search",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                        lineNumber: 131,
+                                        lineNumber: 122,
                                         columnNumber: 81
                                     }, this),
                                     "Archive"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                lineNumber: 131,
+                                lineNumber: 122,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -165,13 +160,13 @@ function ArticlesSearchPage() {
                                 children: "Find research papers"
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                lineNumber: 132,
+                                lineNumber: 123,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                        lineNumber: 130,
+                        lineNumber: 121,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -182,7 +177,7 @@ function ArticlesSearchPage() {
                                 className: "opacity-50 group-focus-within:opacity-100 transition-opacity absolute left-0"
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                lineNumber: 137,
+                                lineNumber: 127,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -193,13 +188,13 @@ function ArticlesSearchPage() {
                                 className: "w-full bg-transparent outline-none pl-8 text-xs tracking-widest uppercase placeholder:opacity-40"
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                lineNumber: 138,
+                                lineNumber: 128,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                        lineNumber: 136,
+                        lineNumber: 126,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -212,14 +207,14 @@ function ArticlesSearchPage() {
                                         size: 12
                                     }, void 0, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                        lineNumber: 150,
+                                        lineNumber: 139,
                                         columnNumber: 13
                                     }, this),
                                     " Categories"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                lineNumber: 149,
+                                lineNumber: 138,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -233,12 +228,12 @@ function ArticlesSearchPage() {
                                                     className: "w-1.5 h-1.5 bg-[var(--color-bg)]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                    lineNumber: 156,
+                                                    lineNumber: 145,
                                                     columnNumber: 56
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                lineNumber: 155,
+                                                lineNumber: 144,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -246,24 +241,24 @@ function ArticlesSearchPage() {
                                                 children: cat
                                             }, void 0, false, {
                                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                lineNumber: 158,
+                                                lineNumber: 147,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, cat, true, {
                                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                        lineNumber: 154,
+                                        lineNumber: 143,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                lineNumber: 152,
+                                lineNumber: 141,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                        lineNumber: 148,
+                        lineNumber: 137,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -276,14 +271,14 @@ function ArticlesSearchPage() {
                                         size: 12
                                     }, void 0, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                        lineNumber: 167,
+                                        lineNumber: 155,
                                         columnNumber: 13
                                     }, this),
                                     " Publication Year"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                lineNumber: 166,
+                                lineNumber: 154,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -294,24 +289,24 @@ function ArticlesSearchPage() {
                                         children: year
                                     }, year, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                        lineNumber: 171,
+                                        lineNumber: 159,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                lineNumber: 169,
+                                lineNumber: 157,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                        lineNumber: 165,
+                        lineNumber: 153,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                lineNumber: 128,
+                lineNumber: 119,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -329,7 +324,7 @@ function ArticlesSearchPage() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                lineNumber: 191,
+                                lineNumber: 173,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -340,7 +335,7 @@ function ArticlesSearchPage() {
                                         size: 14
                                     }, void 0, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                        lineNumber: 199,
+                                        lineNumber: 181,
                                         columnNumber: 13
                                     }, this),
                                     "Sort by: ",
@@ -348,14 +343,14 @@ function ArticlesSearchPage() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                lineNumber: 195,
+                                lineNumber: 177,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                        lineNumber: 190,
-                        columnNumber: 9
+                        lineNumber: 172,
+                        columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex flex-col gap-12",
@@ -374,25 +369,25 @@ function ArticlesSearchPage() {
                                                     className: "w-1/2 h-px bg-[var(--color-primary)] transform rotate-45"
                                                 }, void 0, false, {
                                                     fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                    lineNumber: 218,
+                                                    lineNumber: 197,
                                                     columnNumber: 24
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "w-1/2 h-px bg-[var(--color-primary)] transform -rotate-45 -mt-px"
                                                 }, void 0, false, {
                                                     fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                    lineNumber: 219,
+                                                    lineNumber: 198,
                                                     columnNumber: 24
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                            lineNumber: 217,
+                                            lineNumber: 196,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                        lineNumber: 211,
+                                        lineNumber: 191,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -410,7 +405,7 @@ function ArticlesSearchPage() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                        lineNumber: 227,
+                                                        lineNumber: 205,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -418,7 +413,7 @@ function ArticlesSearchPage() {
                                                         children: article.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                        lineNumber: 231,
+                                                        lineNumber: 209,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -426,7 +421,7 @@ function ArticlesSearchPage() {
                                                         children: article.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                        lineNumber: 235,
+                                                        lineNumber: 213,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -437,13 +432,13 @@ function ArticlesSearchPage() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                        lineNumber: 239,
+                                                        lineNumber: 217,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                lineNumber: 226,
+                                                lineNumber: 204,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -456,7 +451,7 @@ function ArticlesSearchPage() {
                                                                 size: 14
                                                             }, void 0, false, {
                                                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                                lineNumber: 249,
+                                                                lineNumber: 226,
                                                                 columnNumber: 23
                                                             }, this),
                                                             article.views.toLocaleString(),
@@ -464,7 +459,7 @@ function ArticlesSearchPage() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                        lineNumber: 248,
+                                                        lineNumber: 225,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -483,12 +478,12 @@ function ArticlesSearchPage() {
                                                                     strokeWidth: "0.8"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                                    lineNumber: 256,
+                                                                    lineNumber: 233,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                                lineNumber: 255,
+                                                                lineNumber: 232,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -496,31 +491,31 @@ function ArticlesSearchPage() {
                                                                 children: "Read PDF"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                                lineNumber: 258,
+                                                                lineNumber: 235,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                        lineNumber: 254,
+                                                        lineNumber: 231,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                                lineNumber: 245,
+                                                lineNumber: 222,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                        lineNumber: 225,
+                                        lineNumber: 203,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, article.id, true, {
                                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                lineNumber: 208,
+                                lineNumber: 189,
                                 columnNumber: 15
                             }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "w-full py-20 flex flex-col items-center justify-center opacity-40 text-center",
@@ -530,7 +525,7 @@ function ArticlesSearchPage() {
                                     className: "mb-4"
                                 }, void 0, false, {
                                     fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                    lineNumber: 268,
+                                    lineNumber: 245,
                                     columnNumber: 16
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -538,30 +533,30 @@ function ArticlesSearchPage() {
                                     children: "No articles match your criteria."
                                 }, void 0, false, {
                                     fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                                    lineNumber: 269,
+                                    lineNumber: 246,
                                     columnNumber: 16
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                            lineNumber: 267,
+                            lineNumber: 244,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                        lineNumber: 205,
+                        lineNumber: 186,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-                lineNumber: 187,
+                lineNumber: 171,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/czasopismo-naukowe/app/latest/page.tsx",
-        lineNumber: 123,
+        lineNumber: 117,
         columnNumber: 5
     }, this);
 }

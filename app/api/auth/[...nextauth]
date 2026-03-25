@@ -14,12 +14,10 @@ const handler = NextAuth({
         password: { label: "Hasło", type: "password", placeholder: "Wpisz hasło" }
       },
       async authorize(credentials) {
-        // 1. Sprawdzamy, czy użytkownik wpisał cokolwiek
         if (!credentials?.login || !credentials?.password) {
           return null;
         }
 
-        // 2. Szukamy admina w bazie po loginie
         const user = await prisma.admin.findUnique({
           where: { login: credentials.login }
         });
@@ -28,14 +26,11 @@ const handler = NextAuth({
           return null; // Nie ma takiego loginu
         }
 
-        // 3. Porównujemy wpisane hasło z zaszyfrowanym w bazie
         const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
 
         if (!isPasswordValid) {
           return null; // Złe hasło
         }
-
-        // 4. Sukces! Logujemy użytkownika
         return { id: user.id.toString(), name: user.login };
       }
     })

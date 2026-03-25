@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///Users/natalatomala/czasopismo-naukowe/app/admin/page.tsx"],"sourcesContent":["// app/admin/page.tsx\nimport { PrismaClient } from \"@prisma/client\";\nimport AdminDashboard from \"./AdminDashboard\";\n\nconst prisma = new PrismaClient();\n\nexport default async function AdminPage() {\n  // Pobieramy dane na serwerze [cite: 69, 71]\n  const categories = await prisma.category.findMany();\n  const articles = await prisma.article.findMany({\n    include: { category: true },\n    orderBy: { createdAt: 'desc' }\n  });\n\n  return (\n    <AdminDashboard \n      initialCategories={categories} \n      initialArticles={articles} \n    />\n  );\n}"],"names":[],"mappings":";;;;;AAAA,qBAAqB;AACrB;;;;;;;;;AAGA,MAAM,SAAS,IAAI,+NAAY;AAEhB,eAAe;IAC5B,4CAA4C;IAC5C,MAAM,aAAa,MAAM,OAAO,QAAQ,CAAC,QAAQ;IACjD,MAAM,WAAW,MAAM,OAAO,OAAO,CAAC,QAAQ,CAAC;QAC7C,SAAS;YAAE,UAAU;QAAK;QAC1B,SAAS;YAAE,WAAW;QAAO;IAC/B;IAEA,qBACE,uQAAC;QACC,mBAAmB;QACnB,iBAAiB;;;;;;AAGvB"}}]
+}

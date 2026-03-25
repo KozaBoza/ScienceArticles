@@ -14,7 +14,6 @@ var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
-// Usuwamy statyczne LATEST_ARTICLES, będziemy je pobierać z bazy
 const FAQS = [
     {
         q: "How do I submit my manuscript?",
@@ -47,12 +46,12 @@ const ScallopedButton = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b
                     strokeWidth: "0.8"
                 }, void 0, false, {
                     fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                    lineNumber: 17,
+                    lineNumber: 16,
                     columnNumber: 7
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                lineNumber: 16,
+                lineNumber: 15,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -60,68 +59,62 @@ const ScallopedButton = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b
                 children: "Read PDF"
             }, void 0, false, {
                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                lineNumber: 19,
+                lineNumber: 18,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-        lineNumber: 15,
+        lineNumber: 14,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 _c = ScallopedButton;
 function Home() {
     _s();
-    const [articles, setArticles] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
-    const [categories, setCategories] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
-    const [openFaqIndex, setOpenFaqIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    const [activeCategory, setActiveCategory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    // Wewnątrz komponentu Home
-    const [yearFilter, setYearFilter] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    const fetchData = async ()=>{
-        let url = "/api/articles?";
-        if (activeCategory) url += `category=${activeCategory}&`;
-        if (yearFilter) url += `year=${yearFilter}`;
-        const res = await fetch(url);
-        const data = await res.json();
-        setArticles(data);
-    };
+    const [articles, setArticles] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]); // powinno mieć typ Article[], ale dla uproszczenia używamy any[]
+    const [categories, setCategories] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]); // powinno mieć typ Category[], ale dla uproszczenia używamy any[]
+    const [openFaqIndex, setOpenFaqIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null); // który FAQ jest otwarty
+    const [activeCategory, setActiveCategory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null); // aktualnie wybrana kategoria do filtrowania
+    const [yearFilter, setYearFilter] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null); // filtr lat (np. "2024", "2025", "2026")
+    const fetchData = (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Home.useCallback[fetchData]": async ()=>{
+            let url = "/api/articles?"; // endpoint API do pobierania artykułów z opcjonalnymi parametrami filtrowania
+            if (activeCategory) url += `category=${encodeURIComponent(activeCategory)}&`; //  filtr kategorii, jeśli jest aktywny
+            if (yearFilter) url += `year=${yearFilter}`; //  filtr lat, jeśli jest aktywny
+            try {
+                const res = await fetch(url); //  artykuły z API z uwzględnieniem filtrów
+                const data = await res.json(); //  dane artykułów
+                setArticles(data);
+                if (categories.length === 0 && data.length > 0) {
+                    const catNames = Array.from(new Set(data.map({
+                        "Home.useCallback[fetchData].catNames": (a)=>a.category.name
+                    }["Home.useCallback[fetchData].catNames"])));
+                    setCategories(catNames); // unikalne nazwy kategorii
+                }
+            } catch (error) {
+                console.error("Failed to fetch articles:", error);
+            }
+        }
+    }["Home.useCallback[fetchData]"], [
+        activeCategory,
+        yearFilter,
+        categories.length
+    ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Home.useEffect": ()=>{
             fetchData();
         }
     }["Home.useEffect"], [
-        activeCategory,
-        yearFilter
+        fetchData
     ]);
-    // POBIERANIE DANYCH Z BAZY (Integracja z Prisma)
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "Home.useEffect": ()=>{
-            const fetchData = {
-                "Home.useEffect.fetchData": async ()=>{
-                    // Pobieramy artykuły
-                    const artRes = await fetch("/api/articles");
-                    const artData = await artRes.json();
-                    setArticles(artData);
-                    // Pobieramy kategorie (dynamicznie, żeby kółka zgadzały się z bazą)
-                    const catNames = Array.from(new Set(artData.map({
-                        "Home.useEffect.fetchData.catNames": (a)=>a.category.name
-                    }["Home.useEffect.fetchData.catNames"])));
-                    setCategories(catNames);
-                }
-            }["Home.useEffect.fetchData"];
-            fetchData();
-        }
-    }["Home.useEffect"], []);
     const toggleFaq = (index)=>{
-        setOpenFaqIndex(openFaqIndex === index ? null : index);
+        setOpenFaqIndex(openFaqIndex === index ? null : index); //  kliknięty FAQ jest już otwarty, zamknij go, w przeciwnym razie otwórz
     };
     const toggleCategory = (catName)=>{
-        setActiveCategory((prev)=>prev === catName ? null : catName);
+        setActiveCategory((prev)=>prev === catName ? null : catName); //  kliknięta kategoria jest już aktywna, wyłącz filtr, w przeciwnym razie ustaw ją jako aktywną
     };
-    const filteredArticles = activeCategory ? articles.filter((article)=>article.category.name === activeCategory) : articles;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-full flex flex-col items-center pb-0",
+        className: "w-full flex flex-col items-center pb-0 bg-[var(--color-bg)] min-h-screen",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 className: "relative w-full max-w-5xl h-[500px] flex justify-center mt-12",
@@ -130,76 +123,76 @@ function Home() {
                         className: "absolute inset-0 flex justify-center items-start gap-3 md:gap-6 z-0 mt-20 opacity-90 pointer-events-none",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-24 h-80 bg-[var(--color-muted)] transform -rotate-3 transition-colors duration-500"
+                                className: "w-24 h-80 bg-[var(--color-muted)] transform -rotate-3"
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                lineNumber: 77,
+                                lineNumber: 64,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-20 h-72 bg-[var(--color-muted)] transform rotate-6 mt-6 transition-colors duration-500"
+                                className: "w-20 h-72 bg-[var(--color-muted)] transform rotate-6 mt-6"
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                lineNumber: 78,
+                                lineNumber: 65,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-10 h-72 bg-[var(--color-muted)] transform -rotate-12 mt-12 transition-colors duration-500"
+                                className: "w-10 h-72 bg-[var(--color-muted)] transform -rotate-12 mt-12"
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                lineNumber: 79,
+                                lineNumber: 66,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-24 h-96 bg-[var(--color-muted)] transform rotate-3 -mt-4 transition-colors duration-500"
+                                className: "w-24 h-96 bg-[var(--color-muted)] transform rotate-3 -mt-4"
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                lineNumber: 80,
+                                lineNumber: 67,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-24 h-80 bg-[var(--color-muted)] transform -rotate-6 mt-8 transition-colors duration-500"
+                                className: "w-24 h-80 bg-[var(--color-muted)] transform -rotate-6 mt-8"
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                lineNumber: 81,
+                                lineNumber: 68,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-10 h-72 bg-[var(--color-muted)] transform rotate-2 mt-2 transition-colors duration-500"
+                                className: "w-10 h-72 bg-[var(--color-muted)] transform rotate-2 mt-2"
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                lineNumber: 82,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-24 h-80 bg-[var(--color-muted)] transform -rotate-3 mt-12 transition-colors duration-500"
+                                className: "w-24 h-80 bg-[var(--color-muted)] transform -rotate-3 mt-12"
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                lineNumber: 83,
+                                lineNumber: 70,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-20 h-72 bg-[var(--color-muted)] transform rotate-12 mt-4 transition-colors duration-500"
+                                className: "w-20 h-72 bg-[var(--color-muted)] transform rotate-12 mt-4"
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                lineNumber: 84,
+                                lineNumber: 71,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                        lineNumber: 76,
+                        lineNumber: 63,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                        className: "font-serif text-[4.5rem] md:text-[7rem] leading-[0.75] z-10 flex flex-col items-center mix-blend-multiply tracking-tight mt-10 text-[var(--color-primary)] transition-colors duration-500",
+                        className: "font-serif text-[4.5rem] md:text-[7rem] leading-[0.75] z-10 flex flex-col items-center mix-blend-multiply tracking-tight mt-10 text-[var(--color-primary)]",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "transform -translate-x-12",
                                 children: "SCIENTIZED"
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                lineNumber: 88,
+                                lineNumber: 75,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -207,7 +200,7 @@ function Home() {
                                 children: "SCIENCE"
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                lineNumber: 89,
+                                lineNumber: 76,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -215,19 +208,42 @@ function Home() {
                                 children: "SEARCH"
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                lineNumber: 90,
+                                lineNumber: 77,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                        lineNumber: 87,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                lineNumber: 75,
+                lineNumber: 62,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex gap-4 mb-8 z-10",
+                children: [
+                    "2024",
+                    "2025",
+                    "2026"
+                ].map((year)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: ()=>setYearFilter(yearFilter === year ? null : year),
+                        className: `text-[9px] tracking-[0.2em] uppercase px-4 py-1 border transition-all ${yearFilter === year ? 'bg-[var(--color-primary)] text-white' : 'border-[var(--color-primary)] opacity-50 hover:opacity-100'}`,
+                        children: [
+                            "Year: ",
+                            year
+                        ]
+                    }, year, true, {
+                        fileName: "[project]/czasopismo-naukowe/app/page.tsx",
+                        lineNumber: 84,
+                        columnNumber: 11
+                    }, this))
+            }, void 0, false, {
+                fileName: "[project]/czasopismo-naukowe/app/page.tsx",
+                lineNumber: 82,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -243,7 +259,7 @@ function Home() {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex flex-col gap-12",
-                        children: filteredArticles.length > 0 ? filteredArticles.map((article)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        children: articles.length > 0 ? articles.map((article)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex flex-col md:flex-row min-h-[160px] w-full gap-6 md:gap-8 group animate-in fade-in slide-in-from-bottom-4 duration-500",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -254,7 +270,7 @@ function Home() {
                                                 children: "Category"
                                             }, void 0, false, {
                                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                lineNumber: 106,
+                                                lineNumber: 107,
                                                 columnNumber: 20
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -262,13 +278,13 @@ function Home() {
                                                 children: article.category.name
                                             }, void 0, false, {
                                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                lineNumber: 107,
+                                                lineNumber: 108,
                                                 columnNumber: 20
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                        lineNumber: 105,
+                                        lineNumber: 106,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -278,7 +294,7 @@ function Home() {
                                                 className: "absolute top-0 left-0 w-2 h-2 border-t border-l border-[var(--color-primary)]"
                                             }, void 0, false, {
                                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                lineNumber: 113,
+                                                lineNumber: 115,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -289,7 +305,7 @@ function Home() {
                                                         children: article.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                        lineNumber: 116,
+                                                        lineNumber: 118,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -302,7 +318,7 @@ function Home() {
                                                                         children: "Authors:"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                                        lineNumber: 121,
+                                                                        lineNumber: 123,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     " ",
@@ -310,7 +326,7 @@ function Home() {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                                lineNumber: 121,
+                                                                lineNumber: 123,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -323,7 +339,7 @@ function Home() {
                                                                                 children: "Date:"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                                                lineNumber: 124,
+                                                                                lineNumber: 125,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             " ",
@@ -334,7 +350,7 @@ function Home() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                                        lineNumber: 124,
+                                                                        lineNumber: 125,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -344,7 +360,7 @@ function Home() {
                                                                                 children: "Pages:"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                                                lineNumber: 125,
+                                                                                lineNumber: 126,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             " ",
@@ -352,25 +368,49 @@ function Home() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                                        lineNumber: 125,
+                                                                        lineNumber: 126,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                                lineNumber: 122,
+                                                                lineNumber: 124,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                        lineNumber: 120,
+                                                        lineNumber: 122,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex items-center gap-2 mt-2",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/czasopismo-naukowe/app/page.tsx",
+                                                                lineNumber: 131,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-[8px] tracking-widest uppercase font-bold text-green-600",
+                                                                children: "Double-Blind Peer Reviewed"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/czasopismo-naukowe/app/page.tsx",
+                                                                lineNumber: 132,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/czasopismo-naukowe/app/page.tsx",
+                                                        lineNumber: 130,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                lineNumber: 115,
+                                                lineNumber: 117,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -380,23 +420,23 @@ function Home() {
                                                     target: "_blank",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ScallopedButton, {}, void 0, false, {
                                                         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                        lineNumber: 133,
+                                                        lineNumber: 138,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                    lineNumber: 132,
+                                                    lineNumber: 137,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                lineNumber: 130,
+                                                lineNumber: 136,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                        lineNumber: 112,
+                                        lineNumber: 114,
                                         columnNumber: 17
                                     }, this)
                                 ]
@@ -405,11 +445,11 @@ function Home() {
                                 lineNumber: 103,
                                 columnNumber: 15
                             }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "text-center opacity-50 text-[10px] tracking-[0.2em] uppercase py-20",
-                            children: "No articles found."
+                            className: "text-center opacity-50 text-[10px] tracking-[0.2em] uppercase py-20 italic",
+                            children: "No articles found in this archive selection."
                         }, void 0, false, {
                             fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                            lineNumber: 140,
+                            lineNumber: 145,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
@@ -431,7 +471,7 @@ function Home() {
                         children: "Filter by Category"
                     }, void 0, false, {
                         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                        lineNumber: 149,
+                        lineNumber: 153,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -447,24 +487,24 @@ function Home() {
                                     children: catName
                                 }, void 0, false, {
                                     fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                    lineNumber: 164,
+                                    lineNumber: 167,
                                     columnNumber: 17
                                 }, this)
                             }, index, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                lineNumber: 156,
+                                lineNumber: 159,
                                 columnNumber: 15
                             }, this);
                         })
                     }, void 0, false, {
                         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                        lineNumber: 151,
+                        lineNumber: 155,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                lineNumber: 148,
+                lineNumber: 152,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -475,7 +515,7 @@ function Home() {
                         children: "Frequently Asked Questions"
                     }, void 0, false, {
                         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                        lineNumber: 175,
+                        lineNumber: 177,
                         columnNumber: 9
                     }, this),
                     FAQS.map((faq, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -490,7 +530,7 @@ function Home() {
                                             children: faq.q
                                         }, void 0, false, {
                                             fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                            lineNumber: 179,
+                                            lineNumber: 181,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -500,26 +540,26 @@ function Home() {
                                                     className: "absolute w-full h-[1px] bg-[var(--color-primary)]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                    lineNumber: 181,
+                                                    lineNumber: 183,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     className: `absolute w-[1px] h-full bg-[var(--color-primary)] transition-transform duration-300 ${openFaqIndex === index ? 'rotate-90 scale-0' : ''}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                                    lineNumber: 182,
+                                                    lineNumber: 184,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                            lineNumber: 180,
+                                            lineNumber: 182,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                    lineNumber: 178,
+                                    lineNumber: 180,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -529,34 +569,34 @@ function Home() {
                                         children: faq.a
                                     }, void 0, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                        lineNumber: 186,
+                                        lineNumber: 188,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                                    lineNumber: 185,
+                                    lineNumber: 187,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, index, true, {
                             fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                            lineNumber: 177,
+                            lineNumber: 179,
                             columnNumber: 11
                         }, this))
                 ]
             }, void 0, true, {
                 fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-                lineNumber: 174,
+                lineNumber: 176,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/czasopismo-naukowe/app/page.tsx",
-        lineNumber: 72,
+        lineNumber: 61,
         columnNumber: 5
     }, this);
 }
-_s(Home, "/JeJvuUIJNBDEgufFb5SXVp9KV0=");
+_s(Home, "zZQ1lrnQzEdlKjOmiuPjYwkRWjc=");
 _c1 = Home;
 var _c, _c1;
 __turbopack_context__.k.register(_c, "ScallopedButton");

@@ -91,6 +91,7 @@ export async function POST(req: NextRequest) {
         categoryId: category.id,
         pdfPath: pdfFileName, // Zapisujemy tylko nazwę, reszta jest chroniona
         extraFilePath: zipPathStr,
+        keywords: "", // Add appropriate default or dynamic value for keywords
       },
     });
 

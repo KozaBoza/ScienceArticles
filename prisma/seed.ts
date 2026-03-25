@@ -6,11 +6,12 @@ const prisma = new PrismaClient();
 async function main() {
   console.log('--- START SEEDING ---');
 
-  const categories = [
+  
+ const categories = [
     { code: 'M', name: 'Mathematics' },
     { code: 'I', name: 'Computer Science' },
     { code: 'D', name: 'Education' },
-    { code: 'P', name: 'Physics' },
+    { code: 'P', name: 'Science Popularization' }, // <--- ZMIENIONE Z 'Physics'
   ];
 
   console.log('Seeding categories...');
@@ -85,7 +86,8 @@ async function main() {
         publicationDate: new Date("2026-02-15"),
         pdfPath: "M-26-001.pdf",
         categoryId: mathCat.id,
-        views: 124
+        views: 124,
+        keywords: "geometry, physics, non-euclidean"
       },
     });
 

@@ -12,7 +12,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$nod
 var _s = __turbopack_context__.k.signature();
 "use client";
 ;
-// Baza danych kroków (9 kroków, aby idealnie pasowały do Twojej grafiki z 9 kołami)
 const PROCESS_STEPS = [
     {
         id: 1,
@@ -90,14 +89,14 @@ function ReviewProcessPage() {
                     "Review",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                         fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-                        lineNumber: 34,
+                        lineNumber: 33,
                         columnNumber: 15
                     }, this),
                     "Process"
                 ]
             }, void 0, true, {
                 fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-                lineNumber: 33,
+                lineNumber: 32,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -113,7 +112,7 @@ function ReviewProcessPage() {
             `
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-                                lineNumber: 46,
+                                lineNumber: 43,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -121,18 +120,18 @@ function ReviewProcessPage() {
                                 children: step.title
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-                                lineNumber: 52,
+                                lineNumber: 48,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, step.id, true, {
                         fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-                        lineNumber: 40,
+                        lineNumber: 38,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-                lineNumber: 38,
+                lineNumber: 36,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -142,28 +141,28 @@ function ReviewProcessPage() {
                         className: "absolute -top-1 -left-1 w-3 h-3 border-b border-r border-[var(--color-primary)] bg-[var(--color-bg)] transition-colors duration-500"
                     }, void 0, false, {
                         fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-                        lineNumber: 62,
+                        lineNumber: 57,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute -top-1 -right-1 w-3 h-3 border-b border-l border-[var(--color-primary)] bg-[var(--color-bg)] transition-colors duration-500"
                     }, void 0, false, {
                         fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-                        lineNumber: 63,
+                        lineNumber: 58,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute -bottom-1 -left-1 w-3 h-3 border-t border-r border-[var(--color-primary)] bg-[var(--color-bg)] transition-colors duration-500"
                     }, void 0, false, {
                         fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-                        lineNumber: 64,
+                        lineNumber: 59,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute -bottom-1 -right-1 w-3 h-3 border-t border-l border-[var(--color-primary)] bg-[var(--color-bg)] transition-colors duration-500"
                     }, void 0, false, {
                         fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-                        lineNumber: 65,
+                        lineNumber: 60,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -177,7 +176,7 @@ function ReviewProcessPage() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-                                lineNumber: 68,
+                                lineNumber: 63,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -185,7 +184,7 @@ function ReviewProcessPage() {
                                 children: activeStep.title
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-                                lineNumber: 71,
+                                lineNumber: 66,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -193,25 +192,25 @@ function ReviewProcessPage() {
                                 children: activeStep.description
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-                                lineNumber: 74,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-                        lineNumber: 67,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-                lineNumber: 60,
+                lineNumber: 56,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/czasopismo-naukowe/app/review-process/page.tsx",
-        lineNumber: 32,
+        lineNumber: 31,
         columnNumber: 5
     }, this);
 }

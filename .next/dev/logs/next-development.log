@@ -1,46 +1,1133 @@
-[00:00:00.715] Server  LOG     ✓ Ready in 540ms
-[00:00:08.304] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:17.995] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:02:50.323] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./czasopismo-naukowe/app/reviewers/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:02:50.413] Server  LOG     ✓ Compiled in 43ms
-[00:03:51.504] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:14:07.601] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:20:28.209] Server  LOG     ✓ Compiled in 19ms
-[00:20:28.382] Browser ERROR   uncaughtError: TypeError: editors.map is not a function
-[00:20:34.803] Browser ERROR   uncaughtError: TypeError: editors.map is not a function
-[00:21:26.961] Browser ERROR   uncaughtError: TypeError: editors.map is not a function
-[00:21:27.942] Browser ERROR   uncaughtError: TypeError: editors.map is not a function
-[00:22:13.800] Browser ERROR   uncaughtError: TypeError: editors.map is not a function
-[00:22:14.673] Browser ERROR   uncaughtError: TypeError: editors.map is not a function
-[00:23:45.539] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:23:46.078] Server  ERROR   ⨯ Error: The default export is not a React Component in "/editorial-board/page"
-[00:23:46.254] Server  ERROR   ⨯ Error: The default export is not a React Component in "/editorial-board/page"
-[00:23:46.463] Server  ERROR   ⨯ Error: The default export is not a React Component in "/editorial-board/page"
-[00:23:46.636] Server  ERROR   ⨯ Error: The default export is not a React Component in "/editorial-board/page"
-[00:23:46.637] Server  LOG     ✓ Compiled in 882ms
-[00:23:46.981] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/editorial-board/page"
-[00:24:03.489] Server  LOG     ✓ Compiled in 4ms
-[00:24:03.822] Server  ERROR   ⨯ Error: The default export is not a React Component in "/editorial-board/page"
-[00:24:03.988] Server  ERROR   ⨯ Error: The default export is not a React Component in "/editorial-board/page"
-[00:24:04.077] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/editorial-board/page"
-[00:24:49.898] Browser ERROR   Error fetching editors: {}
-[00:24:56.737] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:25:02.682] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:25:08.263] Browser ERROR   Error fetching editors: {}
-[00:25:08.264] Browser ERROR   Error fetching editors: {}
-[00:27:51.622] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
-[00:27:51.801] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
-[00:27:52.020] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
-[00:27:52.197] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
-[00:27:52.376] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/reviews/page"
-[00:31:21.723] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
-[00:31:21.902] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
-[00:31:21.980] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/reviews/page"
-[00:31:23.473] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
-[00:31:23.628] Server  ERROR   ⨯ Error: The default export is not a React Component in "/reviews/page"
-[00:31:23.701] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/reviews/page"
-[00:32:33.632] Browser ERROR   Failed to fetch reviews {}
-[00:33:34.457] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:33:36.457] Browser ERROR   uncaughtError: TypeError: reviews.map is not a function
-[00:35:42.534] Browser ERROR   uncaughtError: TypeError: reviews.map is not a function
-[00:37:26.391] Browser ERROR   uncaughtError: TypeError: reviews.map is not a function
+[00:00:01.465] Server  LOG     ✓ Ready in 1159ms
+[00:20:17.322] Server  LOG     ✓ Compiled in 53ms
+[00:21:20.111] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.112] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.118] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.120] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.122] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.124] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.125] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.127] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.131] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.134] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.136] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.137] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.139] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.141] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.142] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.143] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.149] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.150] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.151] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.152] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:20.308] Browser ERROR   ./czasopismo-naukowe/app/admin/page.tsx:21:1
+Ecmascript file had an error
+   19 |   );
+   20 | }
+>  21 | export default function AdminDashboard() {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  22 |   const router = useRouter();
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  23 |   const [status, setStatus] = useState("");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  24 |   const [articles, setArticles] = useState([]);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  25 |   
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  26 |   // Stany dla pól formularza
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  27 |   const [title, setTitle] = useState("");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  28 |   const [authors, setAuthors] = useState("");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  29 |   const [pageRange, setPageRange] = useState("");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  30 |   const [pubDate, setPubDate] = useState("");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  31 |   const [categoryId, setCategoryId] = useState("1");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  32 |   
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  33 |   // Stany dla plików
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  34 |   const [pdfFile, setPdfFile] = useState<File | null>(null);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  35 |   const [zipFile, setZipFile] = useState<File | null>(null);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  36 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  37 |   // --- FUNKCJE POBIERANIA DANYCH ---
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  38 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  39 |   const fetchArticles = async () => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  40 |     try {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  41 |       const res = await fetch("/api/articles");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  42 |       if (res.ok) {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  43 |         const data = await res.json();
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  44 |         setArticles(data);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  45 |       }
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  46 |     } catch (error) {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  47 |       console.error("Błąd pobierania:", error);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  48 |     }
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  49 |   };
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  50 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  51 |   useEffect(() => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  52 |     fetchArticles();
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  53 |   }, []);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  54 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  55 |   // --- OBSŁUGA PLIKÓW ---
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  56 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  57 |   const onDropPdf = useCallback((acceptedFiles: File[]) => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  58 |     if (acceptedFiles.length > 0) {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  59 |       setPdfFile(acceptedFiles[0]);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  60 |     }
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  61 |   }, []);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  62 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  63 |   const { getRootProps: getPdfProps, getInputProps: getPdfInput } = useDropzone({
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  64 |     onDrop: onDropPdf,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  65 |     accept: { "application/pdf": [".pdf"] },
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  66 |     maxFiles: 1,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  67 |   });
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  68 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  69 |   // --- AKCJE (DODAWANIE I USUWANIE) ---
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  70 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  71 |   const handleSubmit = async (e: React.FormEvent) => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  72 |     e.preventDefault();
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  73 |     if (!pdfFile) {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  74 |       setStatus("Błąd: Plik PDF jest wymagany!");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  75 |       return;
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  76 |     }
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  77 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  78 |     setStatus("Wysyłanie...");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  79 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  80 |     const formData = new FormData();
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  81 |     formData.append("title", title);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  82 |     formData.append("authors", authors);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  83 |     formData.append("pageRange", pageRange);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  84 |     formData.append("publicationDate", pubDate);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  85 |     formData.append("categoryId", categoryId);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  86 |     formData.append("pdfFile", pdfFile);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  87 |     if (zipFile) formData.append("zipFile", zipFile);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  88 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  89 |     const res = await fetch("/api/articles", {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  90 |       method: "POST",
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  91 |       body: formData,
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  92 |     });
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  93 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  94 |     if (res.ok) {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  95 |       setStatus("Sukces! Artykuł został dodany.");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  96 |       setTitle(""); setAuthors(""); setPageRange(""); setPubDate("");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  97 |       setPdfFile(null); setZipFile(null);
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  98 |       fetchArticles(); // Odśwież tabelę
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  99 |     } else {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 100 |       setStatus("Wystąpił błąd podczas dodawania.");
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 101 |     }
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 102 |   };
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 103 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 104 |   const handleDelete = async (id: number) => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 105 |     if (confirm("Czy na pewno chcesz usunąć ten artykuł z systemu?")) {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 106 |       const res = await fetch("/api/articles", {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 107 |         method: "DELETE",
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 108 |         body: JSON.stringify({ id }),
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 109 |         headers: { "Content-Type": "application/json" }
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 110 |       });
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 111 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 112 |       if (res.ok) {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 113 |         fetchArticles();
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 114 |       }
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 115 |     }
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 116 |   };
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 117 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 118 |   return (
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 119 |     <div className="min-h-screen bg-gray-50 p-4 md:p-8">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 120 |       <div className="mx-auto max-w-5xl space-y-8">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 121 |         
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 122 |         {/* SEKCJA 1: FORMULARZ DODAWANIA */}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 123 |         <div className="rounded-xl bg-white p-6 shadow-lg">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 124 |           <div className="mb-6 flex items-center gap-2 border-b pb-4">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 125 |             <FileText className="text-blue-600" />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 126 |             <h1 className="text-2xl font-bold text-gray-800">Dodaj Nowy Artykuł (F5)</h1>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 127 |           </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 128 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 129 |           <form onSubmit={handleSubmit} className="space-y-6">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 130 |             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 131 |               <div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 132 |                 <label className="mb-1 block text-sm font-semibold">Tytuł artykułu</label>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 133 |                 <input type="text" required value={title} onChange={(e) => setTitle(e.target.value)} className="w-full rounded border p-2" />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 134 |               </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 135 |               <div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 136 |                 <label className="mb-1 block text-sm font-semibold">Autorzy</label>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 137 |                 <input type="text" required value={authors} onChange={(e) => setAuthors(e.target.value)} className="w-full rounded border p-2" />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 138 |               </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 139 |               <div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 140 |                 <label className="mb-1 block text-sm font-semibold">Zakres stron (np. 1-15)</label>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 141 |                 <input type="text" required value={pageRange} onChange={(e) => setPageRange(e.target.value)} className="w-full rounded border p-2" />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 142 |               </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 143 |               <div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 144 |                 <label className="mb-1 block text-sm font-semibold">Data publikacji</label>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 145 |                 <input type="date" required value={pubDate} onChange={(e) => setPubDate(e.target.value)} className="w-full rounded border p-2" />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 146 |               </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 147 |               <div className="md:col-span-2">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 148 |                 <label className="mb-1 block text-sm font-semibold">Kategoria</label>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 149 |                 <select value={categoryId} onChange={(e) => setCategoryId(e.target.value)} className="w-full rounded border p-2 bg-white">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 150 |                   <option value="1">Matematyka (M)</option>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 151 |                   <option value="2">Informatyka (I)</option>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 152 |                   <option value="3">Dydaktyka (D)</option>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 153 |                   <option value="4">Popularyzacja nauki (P)</option>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 154 |                 </select>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 155 |               </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 156 |             </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 157 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 158 |             <div {...getPdfProps()} className="cursor-pointer rounded-lg border-2 border-dashed border-blue-400 bg-blue-50 p-6 text-center transition hover:bg-blue-100">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 159 |               <input {...getPdfInput()} />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 160 |               {pdfFile ? (
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 161 |                 <p className="font-medium text-blue-700">✓ Wybrano: {pdfFile.name}</p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 162 |               ) : (
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 163 |                 <p className="text-gray-600 font-medium text-sm">Przeciągnij tutaj PDF artykułu (wymagane)</p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 164 |               )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 165 |             </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 166 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 167 |             <div className="rounded bg-gray-50 p-3 border">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 168 |               <label className="mb-1 block text-xs font-bold uppercase text-gray-500">Opcjonalny ZIP</label>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 169 |               <input type="file" accept=".zip" onChange={(e) => setZipFile(e.target.files?.[0] || null)} className="text-sm" />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 170 |             </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 171 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |             {status && (
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 173 |               <div className={`rounded p-3 text-center text-sm font-bold ${status.includes("Sukces") ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`}>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 174 |                 {status}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 175 |               </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 176 |             )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 177 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 178 |             <button type="submit" className="w-full rounded-lg bg-blue-600 py-3 font-bold text-white hover:bg-blue-700 transition shadow-md">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 179 |               Zapisz Artykuł
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 180 |             </button>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 181 |           </form>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 182 |         </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 183 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 184 |         {/* SEKCJA 2: TABELA STATYSTYK (Wymóg F10) */}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 185 |         <div className="rounded-xl bg-white p-6 shadow-lg">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 186 |           <div className="mb-6 flex items-center gap-2 border-b pb-4">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 187 |             <BarChart3 className="text-green-600" />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 188 |             <h2 className="text-2xl font-bold text-gray-800">Statystyki i Zarządzanie</h2>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 189 |           </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 190 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 191 |           <div className="overflow-x-auto">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 192 |             <table className="w-full text-left text-sm">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 193 |               <thead className="bg-gray-50 text-gray-600 uppercase text-xs font-bold">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 194 |                 <tr>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 195 |                   <th className="p-4">Nazwa Pliku</th>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 196 |                   <th className="p-4">Tytuł</th>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 197 |                   <th className="p-4">Kategoria</th>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 198 |                   <th className="p-4">Statystyki</th>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 199 |                   <th className="p-4 text-center">Akcje</th>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 200 |                 </tr>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 201 |               </thead>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 202 |               <tbody className="divide-y">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 203 |                 {articles.map((art: any) => (
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 204 |                   <tr key={art.id} className="hover:bg-gray-50 transition">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 205 |                     <td className="p-4 font-mono font-bold text-blue-600">{art.pdfPath}</td>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 206 |                     <td className="p-4 max-w-xs truncate">{art.title}</td>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 207 |                     <td className="p-4">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 208 |                         <span className="px-2 py-1 rounded bg-gray-100 text-gray-600 text-xs">{art.category.name}</span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 209 |                     </td>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 210 |                     <td className="p-4">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 211 |                       <div className="flex items-center gap-2">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 212 |                         <span className="font-bold text-lg">{art.views}</span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 213 |                         <span className="text-gray-400 text-xs uppercase">otwarć</span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 214 |                       </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 215 |                     </td>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 216 |                     <td className="p-4 text-center">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 217 |                       <button 
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 218 |                         onClick={() => handleDelete(art.id)}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 219 |                         className="p-2 text-red-500 hover:bg-red-50 rounded-full transition"
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 220 |                         title="Usuń artykuł"
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 221 |                       >
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 222 |                         <Trash2 size={18} />
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 223 |                       </button>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 224 |                     </td>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 225 |                   </tr>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 226 |                 ))}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 227 |                 {articles.length === 0 && (
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 228 |                   <tr>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 229 |                     <td colSpan={5} className="p-8 text-center text-gray-400">Brak artykułów w bazie danych.</td>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 230 |                   </tr>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 231 |                 )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 232 |               </tbody>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 233 |             </table>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 234 |           </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 235 |         </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 236 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 237 |       </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 238 |     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 239 |   );
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 240 | }
+      | ^^
+
+the name `default` is exported multiple times
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+[00:21:20.308] Browser ERROR   ./czasopismo-naukowe/app/admin/page.tsx:8:1
+Module not found: Can't resolve './ArticleUploadForm'
+   6 | import { Trash2, FileText, BarChart3 } from "lucide-react"; // Jeśli masz lucide-react (widziałem w package.json)
+   7 | import { PrismaClient } from "@prisma/client";
+>  8 | import ArticleUploadForm from "./ArticleUploadForm";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | const prisma = new PrismaClient();
+  11 |
+
+Import traces:
+  Client Component Browser:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component Browser]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./czasopismo-naukowe/app/admin/page.tsx [Client Component SSR]
+    ./czasopismo-naukowe/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:56.058] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:3:1
+Module not found: Can't resolve './AdminDashboard'
+  1 | // app/admin/page.tsx
+  2 | import { PrismaClient } from "@prisma/client";
+> 3 | import AdminDashboard from "./AdminDashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const prisma = new PrismaClient();
+  6 |
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:56.059] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:3:1
+Module not found: Can't resolve './AdminDashboard'
+  1 | // app/admin/page.tsx
+  2 | import { PrismaClient } from "@prisma/client";
+> 3 | import AdminDashboard from "./AdminDashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const prisma = new PrismaClient();
+  6 |
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:56.059] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:3:1
+Module not found: Can't resolve './AdminDashboard'
+  1 | // app/admin/page.tsx
+  2 | import { PrismaClient } from "@prisma/client";
+> 3 | import AdminDashboard from "./AdminDashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const prisma = new PrismaClient();
+  6 |
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:56.060] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:3:1
+Module not found: Can't resolve './AdminDashboard'
+  1 | // app/admin/page.tsx
+  2 | import { PrismaClient } from "@prisma/client";
+> 3 | import AdminDashboard from "./AdminDashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const prisma = new PrismaClient();
+  6 |
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:56.060] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:3:1
+Module not found: Can't resolve './AdminDashboard'
+  1 | // app/admin/page.tsx
+  2 | import { PrismaClient } from "@prisma/client";
+> 3 | import AdminDashboard from "./AdminDashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const prisma = new PrismaClient();
+  6 |
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:56.061] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:3:1
+Module not found: Can't resolve './AdminDashboard'
+  1 | // app/admin/page.tsx
+  2 | import { PrismaClient } from "@prisma/client";
+> 3 | import AdminDashboard from "./AdminDashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const prisma = new PrismaClient();
+  6 |
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:56.061] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:3:1
+Module not found: Can't resolve './AdminDashboard'
+  1 | // app/admin/page.tsx
+  2 | import { PrismaClient } from "@prisma/client";
+> 3 | import AdminDashboard from "./AdminDashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const prisma = new PrismaClient();
+  6 |
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:56.061] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:3:1
+Module not found: Can't resolve './AdminDashboard'
+  1 | // app/admin/page.tsx
+  2 | import { PrismaClient } from "@prisma/client";
+> 3 | import AdminDashboard from "./AdminDashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const prisma = new PrismaClient();
+  6 |
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:56.062] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:3:1
+Module not found: Can't resolve './AdminDashboard'
+  1 | // app/admin/page.tsx
+  2 | import { PrismaClient } from "@prisma/client";
+> 3 | import AdminDashboard from "./AdminDashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const prisma = new PrismaClient();
+  6 |
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:56.062] Server  ERROR   ⨯ ./czasopismo-naukowe/app/admin/page.tsx:3:1
+Module not found: Can't resolve './AdminDashboard'
+  1 | // app/admin/page.tsx
+  2 | import { PrismaClient } from "@prisma/client";
+> 3 | import AdminDashboard from "./AdminDashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const prisma = new PrismaClient();
+  6 |
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:56.197] Browser ERROR   ./czasopismo-naukowe/app/admin/page.tsx:3:1
+Module not found: Can't resolve './AdminDashboard'
+  1 | // app/admin/page.tsx
+  2 | import { PrismaClient } from "@prisma/client";
+> 3 | import AdminDashboard from "./AdminDashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const prisma = new PrismaClient();
+  6 |
+
+https://nextjs.org/docs/messages/module-not-found
+[00:23:19.914] Browser ERROR   ./czasopismo-naukowe/app/admin/page.tsx:3:1
+Module not found: Can't resolve './AdminDashboard'
+  1 | // app/admin/page.tsx
+  2 | import { PrismaClient } from "@prisma/client";
+> 3 | import AdminDashboard from "./AdminDashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | const prisma = new PrismaClient();
+  6 |
+
+https://nextjs.org/docs/messages/module-not-found
+[00:27:07.788] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:27:33.331] Browser ERROR   [next-auth][error][CLIENT_FETCH_ERROR] 
+https://next-auth.js.org/errors#client_fetch_error Unexpected token '<', "<!DOCTYPE "... is not valid JSON {"error":{"message":"Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON","name":"SyntaxError","stack":"SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"},"message":"Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON","url":"/api/auth/providers"}
+[00:27:35.884] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior

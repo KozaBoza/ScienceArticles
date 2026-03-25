@@ -123,7 +123,7 @@ function RootLayout({ children }) {
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$src$2f$app$2f$components$2f$Navigation$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                    lineNumber: 21,
+                    lineNumber: 20,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -131,7 +131,7 @@ function RootLayout({ children }) {
                     children: children
                 }, void 0, false, {
                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                    lineNumber: 24,
+                    lineNumber: 22,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
@@ -150,17 +150,17 @@ function RootLayout({ children }) {
                                     d: "M0,100 L0,40 L30,45 L60,30 L90,55 L130,20 L180,60 L230,35 L280,70 L340,25 L400,65 L460,40 L520,80 L580,30 L650,75 L720,45 L800,85 L880,50 L950,90 L1000,60 L1000,100 Z"
                                 }, void 0, false, {
                                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                    lineNumber: 38,
+                                    lineNumber: 34,
                                     columnNumber: 16
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                lineNumber: 37,
+                                lineNumber: 33,
                                 columnNumber: 14
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                            lineNumber: 32,
+                            lineNumber: 29,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -173,7 +173,7 @@ function RootLayout({ children }) {
                                             "SCIENTIZED",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                lineNumber: 46,
+                                                lineNumber: 41,
                                                 columnNumber: 27
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -181,12 +181,12 @@ function RootLayout({ children }) {
                                                 children: "SCIENCE"
                                             }, void 0, false, {
                                                 fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                lineNumber: 47,
+                                                lineNumber: 42,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                lineNumber: 47,
+                                                lineNumber: 42,
                                                 columnNumber: 54
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -194,18 +194,18 @@ function RootLayout({ children }) {
                                                 children: "SEARCH"
                                             }, void 0, false, {
                                                 fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                lineNumber: 48,
+                                                lineNumber: 43,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                        lineNumber: 45,
+                                        lineNumber: 40,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                    lineNumber: 44,
+                                    lineNumber: 39,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -225,7 +225,7 @@ function RootLayout({ children }) {
                                                                     children: "Enter Email"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                                    lineNumber: 58,
+                                                                    lineNumber: 52,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -233,13 +233,13 @@ function RootLayout({ children }) {
                                                                     className: "bg-transparent outline-none text-xs tracking-widest uppercase w-full placeholder:text-white/50"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                                    lineNumber: 59,
+                                                                    lineNumber: 53,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                            lineNumber: 57,
+                                                            lineNumber: 51,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -257,25 +257,25 @@ function RootLayout({ children }) {
                                                                         strokeWidth: "1"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                                        lineNumber: 63,
+                                                                        lineNumber: 57,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                                    lineNumber: 62,
+                                                                    lineNumber: 56,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 "Subscribe"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                            lineNumber: 61,
+                                                            lineNumber: 55,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                    lineNumber: 56,
+                                                    lineNumber: 50,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -286,7 +286,7 @@ function RootLayout({ children }) {
                                                             children: "Scientized Science Search"
                                                         }, void 0, false, {
                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                            lineNumber: 70,
+                                                            lineNumber: 64,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -296,27 +296,27 @@ function RootLayout({ children }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                            lineNumber: 71,
+                                                            lineNumber: 65,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "ISSN: 1234-5678"
                                                         }, void 0, false, {
                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                            lineNumber: 72,
+                                                            lineNumber: 66,
                                                             columnNumber: 19
                                                         }, this),
                                                         " "
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                    lineNumber: 69,
+                                                    lineNumber: 63,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                            lineNumber: 55,
+                                            lineNumber: 49,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -340,12 +340,12 @@ function RootLayout({ children }) {
                                                                         strokeWidth: "1"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                                        lineNumber: 80,
+                                                                        lineNumber: 74,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                                    lineNumber: 79,
+                                                                    lineNumber: 73,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -353,13 +353,13 @@ function RootLayout({ children }) {
                                                                     children: "FAQ"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                                    lineNumber: 82,
+                                                                    lineNumber: 76,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                            lineNumber: 78,
+                                                            lineNumber: 72,
                                                             columnNumber: 20
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -368,7 +368,7 @@ function RootLayout({ children }) {
                                                             children: "Articles"
                                                         }, void 0, false, {
                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                            lineNumber: 84,
+                                                            lineNumber: 78,
                                                             columnNumber: 20
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -377,7 +377,7 @@ function RootLayout({ children }) {
                                                             children: "Team"
                                                         }, void 0, false, {
                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                            lineNumber: 85,
+                                                            lineNumber: 79,
                                                             columnNumber: 20
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -386,7 +386,7 @@ function RootLayout({ children }) {
                                                             children: "About"
                                                         }, void 0, false, {
                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                            lineNumber: 86,
+                                                            lineNumber: 80,
                                                             columnNumber: 20
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -395,7 +395,7 @@ function RootLayout({ children }) {
                                                             children: "Review Process"
                                                         }, void 0, false, {
                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                            lineNumber: 87,
+                                                            lineNumber: 81,
                                                             columnNumber: 20
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -404,13 +404,13 @@ function RootLayout({ children }) {
                                                             children: "Contact"
                                                         }, void 0, false, {
                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                            lineNumber: 88,
+                                                            lineNumber: 82,
                                                             columnNumber: 20
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                    lineNumber: 77,
+                                                    lineNumber: 71,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -422,14 +422,14 @@ function RootLayout({ children }) {
                                                                 "Publishing worldwide",
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                                    lineNumber: 92,
+                                                                    lineNumber: 86,
                                                                     columnNumber: 114
                                                                 }, this),
                                                                 "from Poland"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                            lineNumber: 92,
+                                                            lineNumber: 86,
                                                             columnNumber: 20
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -440,7 +440,7 @@ function RootLayout({ children }) {
                                                                     children: "Socials:"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                                    lineNumber: 94,
+                                                                    lineNumber: 88,
                                                                     columnNumber: 22
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -452,7 +452,7 @@ function RootLayout({ children }) {
                                                                             children: "X"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                                            lineNumber: 96,
+                                                                            lineNumber: 90,
                                                                             columnNumber: 24
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -461,7 +461,7 @@ function RootLayout({ children }) {
                                                                             children: "IG"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                                            lineNumber: 97,
+                                                                            lineNumber: 91,
                                                                             columnNumber: 24
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -470,49 +470,49 @@ function RootLayout({ children }) {
                                                                             children: "IN"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                                            lineNumber: 98,
+                                                                            lineNumber: 92,
                                                                             columnNumber: 24
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                                    lineNumber: 95,
+                                                                    lineNumber: 89,
                                                                     columnNumber: 22
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                            lineNumber: 93,
+                                                            lineNumber: 87,
                                                             columnNumber: 20
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                                    lineNumber: 91,
+                                                    lineNumber: 85,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                            lineNumber: 76,
+                                            lineNumber: 70,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                                    lineNumber: 53,
+                                    lineNumber: 47,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                            lineNumber: 42,
+                            lineNumber: 38,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/czasopismo-naukowe/app/layout.tsx",
-                    lineNumber: 29,
+                    lineNumber: 27,
                     columnNumber: 9
                 }, this)
             ]

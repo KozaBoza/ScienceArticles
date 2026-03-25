@@ -51,12 +51,12 @@ function AboutPage() {
                             className: "absolute top-4 left-4 w-full h-full border border-[var(--color-primary)] transition-colors duration-500 pointer-events-none"
                         }, void 0, false, {
                             fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                            lineNumber: 11,
+                            lineNumber: 10,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                        lineNumber: 10,
+                        lineNumber: 9,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -69,7 +69,7 @@ function AboutPage() {
                                         children: "Our Initiative"
                                     }, void 0, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                                        lineNumber: 17,
+                                        lineNumber: 15,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -77,13 +77,13 @@ function AboutPage() {
                                         children: "Scientized Science Search was founded on the principle that groundbreaking research should be accessible, transparent, and beautifully presented. We aim to bridge the gap between rigorous academic standards and modern, human-centric design. Our initiative supports researchers globally by providing a platform that respects both the data and the reader."
                                     }, void 0, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                                        lineNumber: 18,
+                                        lineNumber: 16,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                                lineNumber: 16,
+                                lineNumber: 14,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -93,7 +93,7 @@ function AboutPage() {
                                         children: "Open Access Mission"
                                     }, void 0, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                                        lineNumber: 24,
+                                        lineNumber: 22,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -101,13 +101,13 @@ function AboutPage() {
                                         children: "We strongly believe that knowledge belongs to humanity. All articles published in our magazine are fully open-access, peer-reviewed by leading experts in their respective fields, and distributed freely. By removing paywalls, we accelerate the pace of discovery and foster interdisciplinary collaboration across mathematics, computer science, education, and science popularization."
                                     }, void 0, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                                        lineNumber: 25,
+                                        lineNumber: 23,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                                lineNumber: 23,
+                                lineNumber: 21,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -117,7 +117,7 @@ function AboutPage() {
                                         children: "Commitment to Accessibility"
                                     }, void 0, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                                        lineNumber: 31,
+                                        lineNumber: 29,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -125,13 +125,13 @@ function AboutPage() {
                                         children: "Science is for everyone. As part of our core values, our platform integrates sensory-friendly themes and distraction-free reading environments, ensuring that neurodivergent individuals and those with visual sensitivities can engage with complex scientific literature comfortably."
                                     }, void 0, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                                        lineNumber: 32,
+                                        lineNumber: 30,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                                lineNumber: 30,
+                                lineNumber: 28,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -142,7 +142,7 @@ function AboutPage() {
                                         children: "Information for Authors"
                                     }, void 0, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                                        lineNumber: 39,
+                                        lineNumber: 37,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -150,7 +150,7 @@ function AboutPage() {
                                         children: "We welcome original research contributions. Prior to submission, please ensure your manuscript adheres strictly to our formatting guidelines, including complete anonymization for the double-blind peer review process. Our comprehensive author guidelines provide detailed instructions on structuring your paper, citing sources, and preparing data visualizations."
                                     }, void 0, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                                        lineNumber: 40,
+                                        lineNumber: 38,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -160,19 +160,19 @@ function AboutPage() {
                                         children: "Download Article Template"
                                     }, void 0, false, {
                                         fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                                        lineNumber: 45,
+                                        lineNumber: 42,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                                lineNumber: 38,
+                                lineNumber: 36,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/czasopismo-naukowe/app/about/page.tsx",
-                        lineNumber: 15,
+                        lineNumber: 13,
                         columnNumber: 9
                     }, this)
                 ]

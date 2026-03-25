@@ -44,14 +44,14 @@ function EditorialBoardPage() {
                     "Editorial",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                         fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                        lineNumber: 38,
+                        lineNumber: 37,
                         columnNumber: 18
                     }, this),
                     "Board"
                 ]
             }, void 0, true, {
                 fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                lineNumber: 37,
+                lineNumber: 36,
                 columnNumber: 7
             }, this),
             loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -59,7 +59,7 @@ function EditorialBoardPage() {
                 children: "Loading board from database..."
             }, void 0, false, {
                 fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                lineNumber: 42,
+                lineNumber: 41,
                 columnNumber: 9
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 w-full max-w-4xl border-t border-[var(--color-primary)]/20 pt-16",
@@ -74,7 +74,7 @@ function EditorialBoardPage() {
                                             className: "w-2 h-2 rounded-full bg-[var(--color-secondary)] group-hover:bg-[var(--color-primary)] transition-colors duration-300"
                                         }, void 0, false, {
                                             fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                                            lineNumber: 51,
+                                            lineNumber: 49,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -82,13 +82,13 @@ function EditorialBoardPage() {
                                             children: editor.name
                                         }, void 0, false, {
                                             fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                                            lineNumber: 52,
+                                            lineNumber: 50,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                                    lineNumber: 49,
+                                    lineNumber: 48,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -99,7 +99,7 @@ function EditorialBoardPage() {
                                             children: editor.affiliation
                                         }, void 0, false, {
                                             fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                                            lineNumber: 58,
+                                            lineNumber: 56,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -110,19 +110,19 @@ function EditorialBoardPage() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                                            lineNumber: 61,
+                                            lineNumber: 59,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                                    lineNumber: 57,
+                                    lineNumber: 55,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, editor.id, true, {
                             fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                            lineNumber: 48,
+                            lineNumber: 47,
                             columnNumber: 13
                         }, this)),
                     editors.length === 0 && !loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -130,13 +130,13 @@ function EditorialBoardPage() {
                         children: "No editors found in the database. Run your seed command."
                     }, void 0, false, {
                         fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                        lineNumber: 69,
+                        lineNumber: 67,
                         columnNumber: 13
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                lineNumber: 46,
+                lineNumber: 45,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -147,7 +147,7 @@ function EditorialBoardPage() {
                         children: "Want to join the board?"
                     }, void 0, false, {
                         fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                        lineNumber: 78,
+                        lineNumber: 76,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$czasopismo$2d$naukowe$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -155,19 +155,19 @@ function EditorialBoardPage() {
                         children: "Inquire with the Editor-in-Chief"
                     }, void 0, false, {
                         fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                        lineNumber: 79,
+                        lineNumber: 77,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-                lineNumber: 77,
+                lineNumber: 75,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/czasopismo-naukowe/app/editorial-board/page.tsx",
-        lineNumber: 35,
+        lineNumber: 34,
         columnNumber: 5
     }, this);
 }
